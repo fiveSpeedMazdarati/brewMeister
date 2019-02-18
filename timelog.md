@@ -7,12 +7,18 @@
 #### 5 hours
 * review videos
 * do activities
-* start exercise 3
+* start exercise 2
 
 ## Week 3 
-#### 6.5 hours 
-* finish exercise 3
+#### 7.5 hours 
+* finish exercise 2
+* watch lecture videos
+* read materials 
 * project planning
-* prepare project checkpoint 1
+    * create user stories
+    * write problem statement
+    * mock up user interface
+    * create project schedule
+    * prepare project checkpoint 1
 
 
