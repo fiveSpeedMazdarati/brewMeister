@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="brewMeister:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>brewMeister</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="BrewMeister.war">
+      <element id="artifact" artifact-name="brewMeister:war exploded" />
+    </root>
+  </artifact>
+</component>
