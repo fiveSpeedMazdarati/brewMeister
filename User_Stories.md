@@ -1,6 +1,6 @@
-#User Stories
+# User Stories
 
-####As a home brewer...
+#### As a home brewer...
  
 - I want to **create an account** so I can have access to the tools the site provides
 - I want to **see a status overview of all of my batches** so I can easily see which batches need attention soon
