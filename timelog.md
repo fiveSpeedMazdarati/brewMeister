@@ -10,7 +10,7 @@
 * start exercise 2
 
 ## Week 3 (2/11 - 2/17)
-#### 8.5 hours 
+#### 9.5 hours 
 * finish exercise 2
 * watch lecture videos
 * read course materials 
