@@ -1,2 +1,1 @@
-Problem Statement:
-***Still working on this...***
+Brewmeister is a home brewer's batch management tool and record keeping system.
