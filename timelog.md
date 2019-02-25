@@ -22,5 +22,10 @@
     * prepare project checkpoint 1
 
 ## Week 4 (2/18 - 2/24)
-#### 1.5 hours
-* implement DAO in indie project
+#### 6.5 hours
+* Week 4 reading (1)
+* Week 4 videos (2)
+* Attempt to implement DAO and beans in indie project (1.5)
+    * document what I think are configuration problems with i-proj
+    * hit brick wall; do week 4 exercise
+* Week 4 exercise (2)
