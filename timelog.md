@@ -22,3 +22,5 @@
     * prepare project checkpoint 1
 
 ## Week 4 (2/18 - 2/24)
+#### 1.5 hours
+* implement DAO in indie project
