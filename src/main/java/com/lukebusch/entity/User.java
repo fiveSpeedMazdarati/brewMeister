@@ -1,10 +1,14 @@
 package com.lukebusch.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 /**
  * The type User.
  */
+@Entity(name="User")
+@Table(name="users")
 public class User {
 
     private int id;
