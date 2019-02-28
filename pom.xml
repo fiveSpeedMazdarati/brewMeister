@@ -87,6 +87,14 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    <!-- Dark Sky API library-->
+    <!--https://github.com/dvdme/forecastio-lib-java-->
+    <dependency>
+        <groupId>com.github.dvdme</groupId>
+        <artifactId>ForecastIOLib</artifactId>
+        <version>LATEST</version>
+    </dependency>
+
   </dependencies>
 
   <build>
