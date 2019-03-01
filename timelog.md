@@ -31,9 +31,9 @@
 * Do week 4 exercise (3)
 
 ## Week 5
-#### 5.5 hours
+#### 6 hours
 * Skim week 5 reading (1)
 * Project API(s) research (1.5)
 * Implement entity tests in project (2)
-* Correct errors in test database configuration (.5)
+* Correct errors in test database configuration (1)
 * Implement Batch.java (.5)
