@@ -8,15 +8,23 @@ import java.time.LocalDate;
  * The type User.
  */
 @Entity(name="User")
-@Table(name="users")
+@Table(name="user")
 public class User {
 
+    // TODO: map the appropriate fields to the database
     private int id;
+
     private String userName;
+
     private String firstName;
+
     private String lastName;
+
     private String zipCode;
+
     private LocalDate birthDate;
+
+    private int roleId;
 
     /**
      * Instantiates a new User.

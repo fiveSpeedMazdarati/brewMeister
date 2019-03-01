@@ -4,10 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/brewmeister</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/brewmeister_test</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
-        <property name="connection.username">brewmeister</property>
+        <property name="connection.username">brewmeister_test</property>
         <property name="connection.password">letsmakesomebeer</property>
 
         <property name="hibernate.c3p0.min_size">5</property>
@@ -16,7 +16,8 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
-        <mapping class="com.lukebusch.persistence.UserDAOTest" />
+        <mapping class="com.lukebusch.entity.User" />
+        <mapping class="com.lukebusch.entity.Batch" />
     </session-factory>
 
 </hibernate-configuration>

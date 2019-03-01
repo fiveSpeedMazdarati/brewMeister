@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 // TODO add unit tests to achieve 100% code coverage of your dao.
 
-class UserDaoTest {
+class UserDAOTest {
 
     /**
      * The Dao.

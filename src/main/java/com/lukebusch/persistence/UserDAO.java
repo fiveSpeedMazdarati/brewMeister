@@ -14,7 +14,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * A data acces class for the User entity
+ * A data access class for the User entity
  */
 public class UserDAO {
 
