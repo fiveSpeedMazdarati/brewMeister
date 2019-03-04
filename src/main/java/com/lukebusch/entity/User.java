@@ -1,7 +1,6 @@
 package com.lukebusch.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -12,18 +11,22 @@ import java.time.LocalDate;
 public class User {
 
     // TODO: map the appropriate fields to the database
+    @Id @GeneratedValue
+    @Column(name="id")
     private int id;
 
+    @Column(name="user_name")
     private String userName;
-
+    private String password;  // this may or may not contain a value. For now I need it to facilitate testing.
+    @Column(name="first_name")
     private String firstName;
-
+    @Column(name="last_name")
     private String lastName;
-
+    @Column(name="zip_code")
     private String zipCode;
-
+    @Column(name="birthdate")
     private LocalDate birthDate;
-
+    @Column(name="role")
     private int roleId;
 
     /**
@@ -42,9 +45,10 @@ public class User {
      * @param zipCode   the zip code
      * @param birthDate the birth date
      */
-    public User(int id, String userName, String firstName, String lastName, String zipCode, LocalDate birthDate) {
+    public User(int id, String userName, String password, String firstName, String lastName, String zipCode, LocalDate birthDate) {
         this.id = id;
         this.userName = userName;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.zipCode = zipCode;

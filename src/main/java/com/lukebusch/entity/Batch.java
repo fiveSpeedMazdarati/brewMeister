@@ -1,7 +1,6 @@
 package com.lukebusch.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -11,15 +10,22 @@ import java.util.Objects;
 @Entity(name="Batch")
 @Table(name="batch")
 public class Batch {
-
+    @Id @GeneratedValue
+    @Column(name="id")
     private int id;
     private String title;
     private String recipe;
+    @Column(name="brew_date")
     private LocalDate brewDate;
+    @Column(name="bottle_date")
     private LocalDate bottleDate;
+    @Column(name="ready_date")
     private LocalDate readyDate;
+    @Column(name="expiration_date")
     private LocalDate expirationDate;
+    @Column(name="initial_specific_gravity")
     private double initalSpecificGravity;
+    @Column(name="final_specific_gravity")
     private double finalSpecificGravity;
 
     /**

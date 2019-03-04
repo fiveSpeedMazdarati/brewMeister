@@ -15,8 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * The type User dao test.
  */
-// TODO add unit tests to achieve 100% code coverage of your dao.
-
 class UserDAOTest {
 
     /**
@@ -45,13 +43,13 @@ class UserDAOTest {
     @Test
     void getByIdSuccess() {
         logger.info("running getByID test");
-        User retrievedUser = dao.getById(1);
+        User retrievedUser = dao.getById(2);
         assertEquals("BigAl", retrievedUser.getUserName());
         assertEquals("Albert", retrievedUser.getFirstName());
-        assertEquals(1, retrievedUser.getId());
+        assertEquals(2, retrievedUser.getId());
         assertEquals("Einstein", retrievedUser.getLastName());
-        assertEquals("10021", retrievedUser.getZipCode());
-        assertEquals(LocalDate.of(1885,4,1), retrievedUser.getBirthDate());
+        assertEquals("11223", retrievedUser.getZipCode());
+        assertEquals(LocalDate.of(1879,3,14), retrievedUser.getBirthDate());
 
     }
 
@@ -80,14 +78,17 @@ class UserDAOTest {
     @Test
     void insertSuccess() {
 
-        User testUser = new User();
+        User testUser = new User(5, "tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
 
         // grab the id of the newly added book, use it to verify the new book was created
         int newId = dao.insert(testUser);
 
         User anotherTestUser = dao.getById(newId);
 
-        assertTrue(testUser.equals(anotherTestUser));
+        assertEquals(testUser.getId(), anotherTestUser.getId());
+        assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
+        assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());
+
 
     }
 
@@ -116,9 +117,9 @@ class UserDAOTest {
      */
     @Test
     void getAllSuccess() {
-        // get all the books
-        // make sure there are the proper number of books
-        List<User> books = dao.getAll();
-        assertEquals(books.size(), 3);
+        // get all the users
+        // make sure there are the proper number of users
+        List<User> users = dao.getAll();
+        assertEquals(users.size(), 4);
     }
 }
