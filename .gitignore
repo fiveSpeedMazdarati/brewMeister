@@ -16,6 +16,8 @@
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 database_info.txt
+database.properties
+
 
 # Gradle:
 .idea/gradle.xml
@@ -48,3 +50,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+#logging files (log4j, generated HTML code coverage reports)
+/logs/
