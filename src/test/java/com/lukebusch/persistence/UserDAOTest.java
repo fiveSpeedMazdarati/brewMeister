@@ -1,5 +1,6 @@
 package com.lukebusch.persistence;
 
+import com.lukebusch.entity.Batch;
 import com.lukebusch.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -85,6 +86,25 @@ class UserDAOTest {
 
         User anotherTestUser = dao.getById(newId);
 
+        assertEquals(testUser.getId(), anotherTestUser.getId());
+        assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
+        assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());
+
+
+    }
+
+    @Test
+    void insertWithOrderSuccess() {
+
+        User testUser = new User(5, "tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
+        Batch testBatch = new Batch(5, "White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043, testUser);
+        // this way each of the entities know about one another!
+        testUser.addBatch(testBatch);
+        // grab the id of the newly added book, use it to verify the new book was created
+        int newId = dao.insert(testUser);
+
+        User anotherTestUser = dao.getById(newId);
+        assertEquals(1, anotherTestUser.getBatches().size());
         assertEquals(testUser.getId(), anotherTestUser.getId());
         assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
         assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());

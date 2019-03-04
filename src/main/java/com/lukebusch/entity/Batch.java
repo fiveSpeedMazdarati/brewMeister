@@ -27,6 +27,10 @@ public class Batch {
     private double initalSpecificGravity;
     @Column(name="final_specific_gravity")
     private double finalSpecificGravity;
+    @ManyToOne
+    private User user;
+
+
 
     /**
      * Instantiates a new Batch.
@@ -46,8 +50,9 @@ public class Batch {
      * @param expirationDate        the expiration date
      * @param initalSpecificGravity the inital specific gravity
      * @param finalSpecificGravity  the final specific gravity
+     * @param user                  the user who owns this batch
      */
-    public Batch(int id, String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initalSpecificGravity, double finalSpecificGravity) {
+    public Batch(int id, String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initalSpecificGravity, double finalSpecificGravity, User user) {
         this.id = id;
         this.title = title;
         this.recipe = recipe;
@@ -57,6 +62,7 @@ public class Batch {
         this.expirationDate = expirationDate;
         this.initalSpecificGravity = initalSpecificGravity;
         this.finalSpecificGravity = finalSpecificGravity;
+        this.user = user;
     }
 
     /**
@@ -232,6 +238,14 @@ public class Batch {
         this.finalSpecificGravity = finalSpecificGravity;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Batch{" +
@@ -244,6 +258,7 @@ public class Batch {
                 ", expirationDate=" + expirationDate +
                 ", initalSpecificGravity=" + initalSpecificGravity +
                 ", finalSpecificGravity=" + finalSpecificGravity +
+                ", user=" + user +
                 '}';
     }
 

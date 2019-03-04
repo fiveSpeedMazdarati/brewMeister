@@ -47,3 +47,57 @@
 [DEBUG] 2019-03-04 11:45:24.660 [main] UserDAOTest - Jose
 [DEBUG] 2019-03-04 11:45:24.992 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
 [INFO ] 2019-03-04 11:45:25.012 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:22:33.232 [main] Database - java.sql.SQLException: Data truncated for column 'expiration_date' at row 1
+[ERROR] 2019-03-04 12:22:35.962 [main] Database - java.sql.SQLException: Data truncated for column 'expiration_date' at row 1
+[DEBUG] 2019-03-04 12:22:35.996 [main] UserDAOTest - Jose
+[ERROR] 2019-03-04 12:22:36.078 [main] Database - java.sql.SQLException: Data truncated for column 'expiration_date' at row 1
+[DEBUG] 2019-03-04 12:22:36.307 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[ERROR] 2019-03-04 12:22:36.327 [main] Database - java.sql.SQLException: Data truncated for column 'expiration_date' at row 1
+[INFO ] 2019-03-04 12:22:36.328 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:22:36.353 [main] Database - java.sql.SQLException: Data truncated for column 'expiration_date' at row 1
+[ERROR] 2019-03-04 12:23:52.301 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[DEBUG] 2019-03-04 12:23:52.337 [main] UserDAOTest - Jose
+[ERROR] 2019-03-04 12:23:52.366 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[DEBUG] 2019-03-04 12:23:52.589 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[ERROR] 2019-03-04 12:23:52.614 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[INFO ] 2019-03-04 12:23:52.615 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:23:52.643 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[ERROR] 2019-03-04 12:27:42.726 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[ERROR] 2019-03-04 12:27:45.421 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[DEBUG] 2019-03-04 12:27:45.453 [main] UserDAOTest - Jose
+[ERROR] 2019-03-04 12:27:45.482 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[DEBUG] 2019-03-04 12:27:45.688 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[ERROR] 2019-03-04 12:27:45.710 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[INFO ] 2019-03-04 12:27:45.711 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:27:45.754 [main] Database - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+[DEBUG] 2019-03-04 12:29:38.650 [main] UserDAOTest - Jose
+[DEBUG] 2019-03-04 12:29:38.893 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[INFO ] 2019-03-04 12:29:38.917 [main] UserDAOTest - running getByID test
+[DEBUG] 2019-03-04 12:32:32.043 [main] UserDAOTest - Jose
+[DEBUG] 2019-03-04 12:32:32.283 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[INFO ] 2019-03-04 12:32:32.307 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:43:54.757 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2019-03-04 12:43:57.336 [main] BatchDAOTest - running getByID test
+[ERROR] 2019-03-04 12:45:37.648 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2019-03-04 12:45:40.235 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[DEBUG] 2019-03-04 12:45:40.264 [main] UserDAOTest - Jose
+[ERROR] 2019-03-04 12:45:40.298 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[DEBUG] 2019-03-04 12:45:40.502 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[ERROR] 2019-03-04 12:45:40.522 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2019-03-04 12:45:40.523 [main] UserDAOTest - running getByID test
+[ERROR] 2019-03-04 12:45:40.557 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2019-03-04 12:46:15.143 [main] BatchDAOTest - running getByID test
+[INFO ] 2019-03-04 12:47:45.138 [main] BatchDAOTest - running getByID test
+[DEBUG] 2019-03-04 12:55:23.656 [main] BatchDAOTest - Jose
+[DEBUG] 2019-03-04 13:03:05.133 [main] BatchDAO - The list of batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, userId=2}]
+[DEBUG] 2019-03-04 13:03:19.038 [main] BatchDAOTest - Jose
+[DEBUG] 2019-03-04 13:03:19.280 [main] BatchDAO - The list of batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, userId=2}]
+[INFO ] 2019-03-04 13:03:19.311 [main] BatchDAOTest - running getByID test
+[DEBUG] 2019-03-04 13:04:23.809 [main] BatchDAOTest - Jose
+[DEBUG] 2019-03-04 13:04:24.191 [main] BatchDAO - The list of batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, userId=2}]
+[INFO ] 2019-03-04 13:04:24.220 [main] BatchDAOTest - running getByID test
+[DEBUG] 2019-03-04 13:04:24.380 [main] UserDAOTest - Jose
+[DEBUG] 2019-03-04 13:04:24.430 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[INFO ] 2019-03-04 13:04:24.457 [main] UserDAOTest - running getByID test
+[DEBUG] 2019-03-04 14:17:59.373 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
+[INFO ] 2019-03-04 14:17:59.402 [main] UserDAOTest - running getByID test

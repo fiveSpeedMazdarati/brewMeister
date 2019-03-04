@@ -2,6 +2,8 @@ package com.lukebusch.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type User.
@@ -14,7 +16,6 @@ public class User {
     @Id @GeneratedValue
     @Column(name="id")
     private int id;
-
     @Column(name="user_name")
     private String userName;
     private String password;  // this may or may not contain a value. For now I need it to facilitate testing.
@@ -28,7 +29,8 @@ public class User {
     private LocalDate birthDate;
     @Column(name="role")
     private int roleId;
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Batch> batches = new HashSet<>();
     /**
      * Instantiates a new User.
      */
@@ -161,6 +163,45 @@ public class User {
      */
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+
+    /**
+     * Gets batches.
+     *
+     * @return the batches
+     */
+    public Set<Batch> getBatches() {
+        return batches;
+    }
+
+    /**
+     * Add batch.
+     *
+     * @param batch the batch
+     */
+    public void addBatch(Batch batch) {
+        batches.add(batch);
+        batch.setUser(this);
+    }
+
+    /**
+     * Remove batch.
+     *
+     * @param batch the batch
+     */
+    public void removeBatch(Batch batch) {
+        batches.remove(batch);
+        batch.setUser(null);
+    }
+
+    /**
+     * Sets batches.
+     *
+     * @param batches the batches
+     */
+    public void setBatches(Set<Batch> batches) {
+        this.batches = batches;
     }
 
     @Override

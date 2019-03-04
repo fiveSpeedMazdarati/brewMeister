@@ -6,7 +6,6 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/brewmeister_test</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-
         <property name="connection.username">brewmeister_test</property>
         <property name="connection.password">letsmakesomebeer</property>
 
@@ -19,7 +18,6 @@
         <property name="hibernate.id.new_generator_mappings">false</property>
         <mapping class="com.lukebusch.entity.User" />
         <mapping class="com.lukebusch.entity.Batch" />
-
     </session-factory>
 
 </hibernate-configuration>
