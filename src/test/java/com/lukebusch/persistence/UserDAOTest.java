@@ -60,15 +60,15 @@ class UserDAOTest {
     @Test
     void saveOrUpdateSuccess() {
         // get a book, change its value, save it back to the database
-        User userToModify = dao.getById(1);
+        User userToModify = dao.getById(2);
         String originalFirstName = userToModify.getFirstName();
 
         userToModify.setFirstName("Jose");
         dao.saveOrUpdate(userToModify);
 
         // get the same book, verify that the author field has changed
-        User modifiedUser = dao.getById(1);
-        logger.debug(modifiedUser.getFirstName());
+        User modifiedUser = dao.getById(2);
+        logger.info("first name from database: " + modifiedUser.getFirstName());
 
         assertNotEquals(originalFirstName, modifiedUser.getFirstName());
     }
@@ -79,7 +79,7 @@ class UserDAOTest {
     @Test
     void insertSuccess() {
 
-        User testUser = new User(5, "tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
+        User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
 
         // grab the id of the newly added book, use it to verify the new book was created
         int newId = dao.insert(testUser);
@@ -96,8 +96,8 @@ class UserDAOTest {
     @Test
     void insertWithOrderSuccess() {
 
-        User testUser = new User(5, "tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
-        Batch testBatch = new Batch(5, "White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043, testUser);
+        User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
+        Batch testBatch = new Batch("White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043);
         // this way each of the entities know about one another!
         testUser.addBatch(testBatch);
         // grab the id of the newly added book, use it to verify the new book was created

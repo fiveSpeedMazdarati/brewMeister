@@ -12,12 +12,12 @@ import java.util.Set;
 @Table(name="user")
 public class User {
 
-    // TODO: map the appropriate fields to the database
     @Id @GeneratedValue
     @Column(name="id")
     private int id;
     @Column(name="user_name")
     private String userName;
+    @Column(name="password")
     private String password;  // this may or may not contain a value. For now I need it to facilitate testing.
     @Column(name="first_name")
     private String firstName;
@@ -29,26 +29,25 @@ public class User {
     private LocalDate birthDate;
     @Column(name="role")
     private int roleId;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Transient
     private Set<Batch> batches = new HashSet<>();
     /**
      * Instantiates a new User.
      */
     public User() {
     }
-
     /**
-     * Instantiates a new User.
+     * Instantiates a new User
      *
-     * @param id        the id
      * @param userName  the user name
      * @param firstName the first name
      * @param lastName  the last name
      * @param zipCode   the zip code
      * @param birthDate the birth date
      */
-    public User(int id, String userName, String password, String firstName, String lastName, String zipCode, LocalDate birthDate) {
-        this.id = id;
+    public User(String userName, String password, String firstName, String lastName, String zipCode, LocalDate birthDate) {
+
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;

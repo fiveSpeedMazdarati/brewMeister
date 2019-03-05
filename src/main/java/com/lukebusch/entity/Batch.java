@@ -29,9 +29,6 @@ public class Batch {
     private double finalSpecificGravity;
     @ManyToOne
     private User user;
-
-
-
     /**
      * Instantiates a new Batch.
      */
@@ -41,7 +38,6 @@ public class Batch {
     /**
      * Instantiates a new Batch.
      *
-     * @param id                    the id
      * @param title                 the title
      * @param recipe                the recipe
      * @param brewDate              the brew date
@@ -50,10 +46,9 @@ public class Batch {
      * @param expirationDate        the expiration date
      * @param initalSpecificGravity the inital specific gravity
      * @param finalSpecificGravity  the final specific gravity
-     * @param user                  the user who owns this batch
      */
-    public Batch(int id, String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initalSpecificGravity, double finalSpecificGravity, User user) {
-        this.id = id;
+    public Batch(String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initalSpecificGravity, double finalSpecificGravity) {
+
         this.title = title;
         this.recipe = recipe;
         this.brewDate = brewDate;
@@ -62,7 +57,6 @@ public class Batch {
         this.expirationDate = expirationDate;
         this.initalSpecificGravity = initalSpecificGravity;
         this.finalSpecificGravity = finalSpecificGravity;
-        this.user = user;
     }
 
     /**
@@ -71,7 +65,6 @@ public class Batch {
      * @return the percent alcohol by volume of this batch expressed as a double e.g. 5.25 = 5.25%
      */
     public double getABV() {
-
 
         return ((initalSpecificGravity - finalSpecificGravity) * 131.25) ;
     }
@@ -238,10 +231,20 @@ public class Batch {
         this.finalSpecificGravity = finalSpecificGravity;
     }
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }
@@ -270,12 +273,13 @@ public class Batch {
         return id == batch.id &&
                 Double.compare(batch.initalSpecificGravity, initalSpecificGravity) == 0 &&
                 Double.compare(batch.finalSpecificGravity, finalSpecificGravity) == 0 &&
-                title.equals(batch.title) &&
+                Objects.equals(title, batch.title) &&
                 Objects.equals(recipe, batch.recipe) &&
                 Objects.equals(brewDate, batch.brewDate) &&
                 Objects.equals(bottleDate, batch.bottleDate) &&
                 Objects.equals(readyDate, batch.readyDate) &&
-                Objects.equals(expirationDate, batch.expirationDate);
+                Objects.equals(expirationDate, batch.expirationDate) &&
+                Objects.equals(user, batch.user);
     }
 
     @Override

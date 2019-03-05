@@ -63,7 +63,6 @@ public class BatchDAOTest {
 
         // get the same batch, verify that the author field has changed
         Batch modifiedBatch = dao.getById(1);
-        logger.debug(modifiedBatch.getTitle());
 
         assertNotEquals(originalBatchTitle, modifiedBatch.getTitle());
     }
@@ -74,7 +73,7 @@ public class BatchDAOTest {
     @Test
     void insertSuccess() {
         User testUser = new User();
-        Batch testBatch = new Batch(5, "White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043, testUser);
+        Batch testBatch = new Batch("White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043);
 
         // grab the id of the newly added batch, use it to verify the new batch was created
         int newId = dao.insert(testBatch);
@@ -116,7 +115,7 @@ public class BatchDAOTest {
         // get all the batches
         // make sure there are the proper number of batches
         List<Batch> batches = dao.getAll();
-        assertEquals(batches.size(), 1);
+        assertEquals(batches.size(), 3);
     }
 
 }

@@ -7,3 +7,5 @@ INSERT INTO user VALUES (4, "uncertain", "password", "Werner-Karl", "Heisenberg"
 DELETE FROM batch;
 ALTER TABLE batch AUTO_INCREMENT = 1;
 INSERT INTO batch VALUES (1, "batch title", "recipe name", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, 2);
+INSERT INTO batch VALUES (2, "Christmas 2018", "Begian Dubbel", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, 1);
+INSERT INTO batch VALUES (3, "Summer 2018", "Golden Lager", "2018-03-01", "2018-03-06", "2018-04-20", "2018-10-20", 1.105, 1.055, 2);

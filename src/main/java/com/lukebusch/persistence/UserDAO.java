@@ -35,6 +35,7 @@ public class UserDAO {
      * @param user User to be inserted or updated
      */
     public void saveOrUpdate(User user) {
+
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
