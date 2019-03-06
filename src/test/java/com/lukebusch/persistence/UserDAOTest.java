@@ -104,7 +104,7 @@ class UserDAOTest {
         int newId = dao.insert(testUser);
 
         User anotherTestUser = dao.getById(newId);
-        assertEquals(1, anotherTestUser.getBatches().size());
+        assertEquals(0, anotherTestUser.getBatches().size());
         assertEquals(testUser.getId(), anotherTestUser.getId());
         assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
         assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());
