@@ -979,8 +979,7 @@
       <RefSchemaName>brewmeister_test</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
     <column id="243" parent="228" name="id">
       <Position>1</Position>

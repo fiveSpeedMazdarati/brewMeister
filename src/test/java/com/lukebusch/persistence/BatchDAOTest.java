@@ -35,7 +35,7 @@ public class BatchDAOTest {
      */
     @Test
     void getByIdSuccess() {
-        logger.info("running getByID test");
+        logger.debug("running getByID test");
         Batch retrievedBatch = dao.getById(1);
         assertEquals("batch title", retrievedBatch.getTitle());
         assertEquals("recipe name", retrievedBatch.getRecipe());

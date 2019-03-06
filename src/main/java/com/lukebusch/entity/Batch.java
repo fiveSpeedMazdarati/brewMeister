@@ -1,5 +1,7 @@
 package com.lukebusch.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -10,7 +12,9 @@ import java.util.Objects;
 @Entity(name="Batch")
 @Table(name="batch")
 public class Batch {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     @Column(name="id")
     private int id;
     private String title;

@@ -1,5 +1,7 @@
 package com.lukebusch.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -11,8 +13,9 @@ import java.util.Set;
 @Entity(name="User")
 @Table(name="user")
 public class User {
-
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     @Column(name="id")
     private int id;
     @Column(name="user_name")
@@ -29,8 +32,7 @@ public class User {
     private LocalDate birthDate;
     @Column(name="role")
     private int roleId;
-    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Transient
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Batch> batches = new HashSet<>();
     /**
      * Instantiates a new User.
