@@ -28,7 +28,6 @@ public class BatchDAOTest {
         com.lukebusch.test.util.Database database = com.lukebusch.test.util.Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new BatchDAO();
         genericDao = new GenericDao( Batch.class );
     }
 

@@ -190,3 +190,20 @@
 [INFO ] 2019-03-07 12:10:23.332 [main] UserDAOTest - running getByID test
 [DEBUG] 2019-03-07 12:16:46.553 [main] BatchDAOTest - running getByID test
 [DEBUG] 2019-03-07 12:20:24.634 [main] BatchDAOTest - running getByID test
+[INFO ] 2019-03-07 14:18:09.596 [main] UserDAOTest - running getByID test
+[DEBUG] 2019-03-07 14:19:20.819 [main] UserDAOTest - This user: User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}
+[DEBUG] 2019-03-07 14:19:20.820 [main] UserDAOTest - User's original first name: Albert
+[DEBUG] 2019-03-07 14:19:20.820 [main] UserDAOTest - User's batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}, Batch{id=3, title='Summer 2018', recipe='Golden Lager', brewDate=2018-03-01, bottleDate=2018-03-06, readyDate=2018-04-20, expirationDate=2018-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}]
+[DEBUG] 2019-03-07 14:19:20.849 [main] UserDAOTest - first name from database: Jose
+[DEBUG] 2019-03-07 14:23:24.728 [main] BatchDAOTest - running getByID test
+[DEBUG] 2019-03-07 14:23:24.834 [main] UserDAOTest - This user: User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}
+[DEBUG] 2019-03-07 14:23:24.834 [main] UserDAOTest - User's original first name: Albert
+[DEBUG] 2019-03-07 14:23:24.835 [main] UserDAOTest - User's batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}, Batch{id=3, title='Summer 2018', recipe='Golden Lager', brewDate=2018-03-01, bottleDate=2018-03-06, readyDate=2018-04-20, expirationDate=2018-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}]
+[DEBUG] 2019-03-07 14:23:24.870 [main] UserDAOTest - first name from database: Jose
+[INFO ] 2019-03-07 14:23:24.944 [main] UserDAOTest - running getByID test
+[DEBUG] 2019-03-07 14:26:57.037 [main] BatchDAOTest - running getByID test
+[DEBUG] 2019-03-07 14:26:57.132 [main] UserDAOTest - This user: User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}
+[DEBUG] 2019-03-07 14:26:57.133 [main] UserDAOTest - User's original first name: Albert
+[DEBUG] 2019-03-07 14:26:57.133 [main] UserDAOTest - User's batches: [Batch{id=1, title='batch title', recipe='recipe name', brewDate=2019-03-01, bottleDate=2019-03-06, readyDate=2019-04-20, expirationDate=2019-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}, Batch{id=3, title='Summer 2018', recipe='Golden Lager', brewDate=2018-03-01, bottleDate=2018-03-06, readyDate=2018-04-20, expirationDate=2018-10-20, initalSpecificGravity=1.105, finalSpecificGravity=1.055, user=User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}}]
+[DEBUG] 2019-03-07 14:26:57.150 [main] UserDAOTest - first name from database: Jose
+[INFO ] 2019-03-07 14:26:57.214 [main] UserDAOTest - running getByID test

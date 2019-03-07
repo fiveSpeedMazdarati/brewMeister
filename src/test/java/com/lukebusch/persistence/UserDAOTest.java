@@ -19,9 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserDAOTest {
 
     /**
-     * The Dao.
+     * The (generic) Dao.
      */
-    UserDAO dao;
+    GenericDao genericDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
@@ -35,7 +35,8 @@ class UserDAOTest {
         com.lukebusch.test.util.Database database = com.lukebusch.test.util.Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new UserDAO();
+        genericDao = new GenericDao( User.class );
+
     }
 
     /**
@@ -44,7 +45,7 @@ class UserDAOTest {
     @Test
     void getByIdSuccess() {
         logger.info("running getByID test");
-        User retrievedUser = dao.getById(2);
+        User retrievedUser = (User)genericDao.getById(2);
         assertEquals("BigAl", retrievedUser.getUserName());
         assertEquals("Albert", retrievedUser.getFirstName());
         assertEquals(2, retrievedUser.getId());
@@ -60,16 +61,16 @@ class UserDAOTest {
     @Test
     void saveOrUpdateSuccess() {
         // get a batch, change its value, save it back to the database
-        User userToModify = dao.getById(2);
+        User userToModify = (User) genericDao.getById(2);
         String originalFirstName = userToModify.getFirstName();
         logger.debug("This user: " + userToModify.toString());
         logger.debug("User's original first name: " + originalFirstName);
         logger.debug("User's batches: " + userToModify.getBatches());
         userToModify.setFirstName("Jose");
-        dao.saveOrUpdate(userToModify);
+        genericDao.saveOrUpdate(userToModify);
 
         // get the same user, verify that the first name field has changed
-        User modifiedUser = dao.getById(2);
+        User modifiedUser = (User) genericDao.getById(2);
         logger.debug("first name from database: " + modifiedUser.getFirstName());
 
         assertNotEquals(originalFirstName, modifiedUser.getFirstName());
@@ -84,9 +85,9 @@ class UserDAOTest {
         User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
 
         // grab the id of the newly added book, use it to verify the new book was created
-        int newId = dao.insert(testUser);
+        int newId = genericDao.insert(testUser);
 
-        User anotherTestUser = dao.getById(newId);
+        User anotherTestUser = (User) genericDao.getById(newId);
 
         assertEquals(testUser.getId(), anotherTestUser.getId());
         assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
@@ -107,9 +108,9 @@ class UserDAOTest {
         // this way each of the entities know about one another!
         testUser.addBatch(testBatch);
         // grab the id of the newly added book, use it to verify the new book was created
-        int newId = dao.insert(testUser);
+        int newId = genericDao.insert(testUser);
 
-        User anotherTestUser = dao.getById(newId);
+        User anotherTestUser = (User) genericDao.getById(newId);
         assertEquals(1, anotherTestUser.getBatches().size());
         assertEquals(testUser.getId(), anotherTestUser.getId());
         assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
@@ -131,9 +132,9 @@ class UserDAOTest {
         User bookToDelete = new User();
         bookToDelete.setId(2);
 
-        dao.delete(bookToDelete);
+        genericDao.delete(bookToDelete);
 
-        User deletedUser = dao.getById(2);
+        User deletedUser = (User) genericDao.getById(2);
 
         assertTrue(Objects.isNull(deletedUser));
     }
@@ -145,7 +146,7 @@ class UserDAOTest {
     void getAllSuccess() {
         // get all the users
         // make sure there are the proper number of users
-        List<User> users = dao.getAll();
+        List<User> users = genericDao.getAll();
         assertEquals(users.size(), 4);
     }
 }

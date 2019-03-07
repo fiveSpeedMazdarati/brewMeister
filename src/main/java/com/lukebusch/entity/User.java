@@ -32,7 +32,7 @@ public class User {
     private LocalDate birthDate;
     @Column(name="role")
     private int roleId;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Batch> batches = new HashSet<>();
     /**
      * Instantiates a new User.
