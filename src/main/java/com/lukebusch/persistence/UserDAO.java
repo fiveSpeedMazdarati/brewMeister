@@ -90,6 +90,27 @@ public class UserDAO {
         return users;
     }
 
+    /**
+     * Get User by property (exact match)
+     * e.g. getByPropertyEqual("propertyName", "value")
+     *
+     * @param propertyName the property of the entitiy to search by
+     * @param value the value of the specified property
+     * @return list of Users which meet the search criteria
+     */
+    public List<User> getByPropertyEqual(String propertyName, String value) {
+        Session session = sessionFactory.openSession();
+        logger.debug("Search for " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<User> query = builder.createQuery( User.class );
+        Root<User> root = query.from ( User.class );
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<User> users = session.createQuery( query ).getResultList();
+
+        return users;
+    }
+
 
 
 }

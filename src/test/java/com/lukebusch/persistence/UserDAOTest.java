@@ -30,7 +30,7 @@ class UserDAOTest {
     @BeforeEach
     void setUp() {
 
-        // database code of some sort
+
         // repopulate the table I'm testing
         com.lukebusch.test.util.Database database = com.lukebusch.test.util.Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -62,13 +62,15 @@ class UserDAOTest {
         // get a batch, change its value, save it back to the database
         User userToModify = dao.getById(2);
         String originalFirstName = userToModify.getFirstName();
-        logger.info("User's original first name: " + originalFirstName);
+        logger.debug("This user: " + userToModify.toString());
+        logger.debug("User's original first name: " + originalFirstName);
+        logger.debug("User's batches: " + userToModify.getBatches());
         userToModify.setFirstName("Jose");
         dao.saveOrUpdate(userToModify);
 
         // get the same user, verify that the first name field has changed
         User modifiedUser = dao.getById(2);
-        logger.info("first name from database: " + modifiedUser.getFirstName());
+        logger.debug("first name from database: " + modifiedUser.getFirstName());
 
         assertNotEquals(originalFirstName, modifiedUser.getFirstName());
     }

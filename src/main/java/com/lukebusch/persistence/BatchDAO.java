@@ -14,6 +14,10 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
+ * *** Currently not used in favor of a Generic Dao ***
+ *
+ *
+ *
  * A Dao to manipulate beer batches
  *
  * @author lbusch

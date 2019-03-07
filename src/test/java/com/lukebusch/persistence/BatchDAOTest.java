@@ -19,6 +19,7 @@ public class BatchDAOTest {
      * The Dao.
      */
     BatchDAO dao;
+    GenericDao genericDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
@@ -28,6 +29,7 @@ public class BatchDAOTest {
         database.runSQL("cleandb.sql");
 
         dao = new BatchDAO();
+        genericDao = new GenericDao( Batch.class );
     }
 
     /**
@@ -36,7 +38,7 @@ public class BatchDAOTest {
     @Test
     void getByIdSuccess() {
         logger.debug("running getByID test");
-        Batch retrievedBatch = dao.getById(1);
+        Batch retrievedBatch = (Batch)genericDao.getById(1);
         assertEquals("batch title", retrievedBatch.getTitle());
         assertEquals("recipe name", retrievedBatch.getRecipe());
         assertEquals(1, retrievedBatch.getId());
@@ -55,14 +57,14 @@ public class BatchDAOTest {
     @Test
     void saveOrUpdateSuccess() {
         // get a batch, change its value, save it back to the database
-        Batch batchToModify = dao.getById(1);
+        Batch batchToModify = (Batch) genericDao.getById(1);
         String originalBatchTitle = batchToModify.getTitle();
 
         batchToModify.setTitle("Jose");
-        dao.saveOrUpdate(batchToModify);
+        genericDao.saveOrUpdate(batchToModify);
 
         // get the same batch, verify that the author field has changed
-        Batch modifiedBatch = dao.getById(1);
+        Batch modifiedBatch = (Batch) genericDao.getById(1);
 
         assertNotEquals(originalBatchTitle, modifiedBatch.getTitle());
     }
@@ -76,9 +78,9 @@ public class BatchDAOTest {
         Batch testBatch = new Batch("White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043);
 
         // grab the id of the newly added batch, use it to verify the new batch was created
-        int newId = dao.insert(testBatch);
+        int newId = genericDao.insert(testBatch);
 
-        Batch anotherTestBatch = dao.getById(newId);
+        Batch anotherTestBatch = (Batch) genericDao.getById(newId);
 
         assertEquals(testBatch.getId(), anotherTestBatch.getId());
         assertEquals(testBatch.getTitle(), anotherTestBatch.getTitle());
@@ -100,9 +102,9 @@ public class BatchDAOTest {
         Batch batchToDelete = new Batch();
         batchToDelete.setId(1);
 
-        dao.delete(batchToDelete);
+        genericDao.delete(batchToDelete);
 
-        Batch deletedBatch = dao.getById(1);
+        Batch deletedBatch = (Batch) genericDao.getById(1);
 
         assertTrue(Objects.isNull(deletedBatch));
     }
@@ -114,7 +116,7 @@ public class BatchDAOTest {
     void getAllSuccess() {
         // get all the batches
         // make sure there are the proper number of batches
-        List<Batch> batches = dao.getAll();
+        List<Batch> batches = genericDao.getAll();
         assertEquals(batches.size(), 3);
     }
 
