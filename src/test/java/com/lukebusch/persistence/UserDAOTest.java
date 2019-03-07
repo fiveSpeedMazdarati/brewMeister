@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -89,11 +88,7 @@ class UserDAOTest {
 
         User anotherTestUser = (User) genericDao.getById(newId);
 
-        assertEquals(testUser.getId(), anotherTestUser.getId());
-        assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
-        assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());
-
-
+        assertEquals(testUser, anotherTestUser);
     }
 
     /**
@@ -111,10 +106,8 @@ class UserDAOTest {
         int newId = genericDao.insert(testUser);
 
         User anotherTestUser = (User) genericDao.getById(newId);
-        assertEquals(1, anotherTestUser.getBatches().size());
-        assertEquals(testUser.getId(), anotherTestUser.getId());
-        assertEquals(testUser.getUserName(), anotherTestUser.getUserName());
-        assertEquals(testUser.getFirstName(), anotherTestUser.getFirstName());
+        assertEquals(testUser, anotherTestUser);
+
 
 
     }
@@ -136,7 +129,7 @@ class UserDAOTest {
 
         User deletedUser = (User) genericDao.getById(2);
 
-        assertTrue(Objects.isNull(deletedUser));
+        assertNull(deletedUser);
     }
 
     /**

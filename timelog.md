@@ -38,3 +38,11 @@
 * Troubleshoot Hibernate and Database setup (2.0)
 * Correct errors in test database configuration (1.5)
 * Implement Batch.java (.5)
+
+## Week 6
+#### 3.5 hours
+* Implement generic DAO
+    * This resolved Hibernate session problems which caused saveOrUpdateWithBatch tests to fail
+* Review AWS videos
+* Curtis' presentation feedback
+* Curtis and Blake code review feedback

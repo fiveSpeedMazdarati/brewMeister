@@ -1,7 +1,6 @@
 package com.lukebusch.persistence;
 
 import com.lukebusch.entity.Batch;
-import com.lukebusch.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,7 +16,6 @@ public class BatchDAOTest {
     /**
      * The Dao.
      */
-    BatchDAO dao;
     GenericDao genericDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -36,18 +33,20 @@ public class BatchDAOTest {
      */
     @Test
     void getByIdSuccess() {
-        logger.debug("running getByID test");
-        Batch retrievedBatch = (Batch)genericDao.getById(1);
-        assertEquals("batch title", retrievedBatch.getTitle());
-        assertEquals("recipe name", retrievedBatch.getRecipe());
-        assertEquals(1, retrievedBatch.getId());
-        assertEquals(LocalDate.of(2019,3,1), retrievedBatch.getBrewDate());
-        assertEquals(LocalDate.of(2019,3,6), retrievedBatch.getBottleDate());
-        assertEquals(LocalDate.of(2019,4,20), retrievedBatch.getReadyDate());
-        assertEquals(LocalDate.of(2019,10,20), retrievedBatch.getExpirationDate());
-        assertEquals(1.105, retrievedBatch.getInitalSpecificGravity());
-        assertEquals(1.055, retrievedBatch.getFinalSpecificGravity());
 
+        Batch retrievedBatch = (Batch)genericDao.getById(1);
+        Batch shouldBeIdenticalBatch = new Batch("batch title", "recipe name"
+                    , LocalDate.of(2019, 3, 1)
+                    , LocalDate.of(2019,3,6)
+                    , LocalDate.of(2019,4,20)
+                    , LocalDate.of(2019, 10, 20)
+                    , 1.105
+                    , 1.055
+        );
+        // Don't forget to set the id!
+        shouldBeIdenticalBatch.setId(1);
+
+        assertEquals(retrievedBatch, shouldBeIdenticalBatch);
     }
 
     /**
@@ -80,12 +79,7 @@ public class BatchDAOTest {
         int newId = genericDao.insert(testBatch);
 
         Batch anotherTestBatch = (Batch) genericDao.getById(newId);
-
-        assertEquals(testBatch.getId(), anotherTestBatch.getId());
-        assertEquals(testBatch.getTitle(), anotherTestBatch.getTitle());
-        assertEquals(testBatch.getRecipe(), anotherTestBatch.getRecipe());
-
-
+        assertEquals(testBatch, anotherTestBatch);
     }
 
     /**
@@ -105,7 +99,7 @@ public class BatchDAOTest {
 
         Batch deletedBatch = (Batch) genericDao.getById(1);
 
-        assertTrue(Objects.isNull(deletedBatch));
+        assertNull(deletedBatch);
     }
 
     /**

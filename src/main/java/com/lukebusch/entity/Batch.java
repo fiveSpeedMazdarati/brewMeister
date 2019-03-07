@@ -282,8 +282,7 @@ public class Batch {
                 Objects.equals(brewDate, batch.brewDate) &&
                 Objects.equals(bottleDate, batch.bottleDate) &&
                 Objects.equals(readyDate, batch.readyDate) &&
-                Objects.equals(expirationDate, batch.expirationDate) &&
-                Objects.equals(user, batch.user);
+                Objects.equals(expirationDate, batch.expirationDate);
     }
 
     @Override

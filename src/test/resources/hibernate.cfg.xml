@@ -15,7 +15,7 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
         <property name="show_sql">true</property>
-        <!-- <property name="hibernate.id.new_generator_mappings">false</property> -->
+
         <mapping class="com.lukebusch.entity.User" />
         <mapping class="com.lukebusch.entity.Batch" />
     </session-factory>
