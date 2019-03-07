@@ -66,11 +66,11 @@ class UserDAOTest {
         userToModify.setFirstName("Jose");
         dao.saveOrUpdate(userToModify);
 
-        // get the same book, verify that the author field has changed
-        //User modifiedUser = dao.getById(2);
-        //logger.info("first name from database: " + modifiedUser.getFirstName());
+        // get the same user, verify that the first name field has changed
+        User modifiedUser = dao.getById(2);
+        logger.info("first name from database: " + modifiedUser.getFirstName());
 
-        //assertNotEquals(originalFirstName, modifiedUser.getFirstName());
+        assertNotEquals(originalFirstName, modifiedUser.getFirstName());
     }
 
     /**
@@ -92,6 +92,10 @@ class UserDAOTest {
 
 
     }
+
+    /**
+     * Verifies insert function when User has associated Batches
+     */
 
     @Test
     void insertWithBatchSuccess() {

@@ -168,3 +168,6 @@
 [INFO ] 2019-03-06 14:17:01.360 [main] UserDAOTest - User's original first name: Albert
 [DEBUG] 2019-03-06 14:17:01.797 [main] UserDAO - The list of users: [User{id=1, userName='nelly-o', firstName='Neils', lastName='Bohr', zipCode='11122', birthDate=1885-07-10}, User{id=2, userName='BigAl', firstName='Albert', lastName='Einstein', zipCode='11223', birthDate=1879-03-14}, User{id=3, userName='Brauny', firstName='Wernher', lastName='von Braun', zipCode='12233', birthDate=1912-03-23}, User{id=4, userName='uncertain', firstName='Werner-Karl', lastName='Heisenberg', zipCode='12334', birthDate=1901-12-05}]
 [INFO ] 2019-03-06 14:17:01.832 [main] UserDAOTest - running getByID test
+[INFO ] 2019-03-07 09:19:05.151 [main] UserDAOTest - User's original first name: Albert
+[INFO ] 2019-03-07 09:24:48.649 [main] UserDAOTest - User's original first name: Albert
+[INFO ] 2019-03-07 09:27:31.577 [main] UserDAOTest - User's original first name: Albert
