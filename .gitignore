@@ -53,3 +53,5 @@ fabric.properties
 
 #logging files (log4j, generated HTML code coverage reports)
 /logs/
+logs/logs.log
+logs/generated_html
