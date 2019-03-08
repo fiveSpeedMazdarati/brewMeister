@@ -23,28 +23,35 @@
 
 ## Week 4 (2/18 - 2/24)
 #### 7.5 hours
-* Skim week 4 reading (1)
-* Watch week 4 videos (2)
-* Attempt to implement DAO and beans in indie project (1.5)
+* Skim week 4 reading
+* Watch week 4 videos
+* Attempt to implement DAO and beans in indie project
     * document what I think are configuration problems with i-proj
     * hit brick wall; do week 4 exercise instead (SessionFactory, etc...)
-* Do week 4 exercise (3)
+* Do week 4 exercise
 
 ## Week 5
 #### 8.5 hours
-* Skim week 5 reading (1)
-* Project API(s) research (1.5)
-* Implement entity tests in project (2)
-* Troubleshoot Hibernate and Database setup (2.0)
-* Correct errors in test database configuration (1.5)
-* Implement Batch.java (.5)
+* Skim week 5 reading
+* Project API(s) research 
+* Implement entity tests in project
+* Troubleshoot Hibernate and Database setup
+* Correct errors in test database configuration
+* Implement Batch.java
 
 ## Week 6
 #### 7 hours
-* Troubleshoot Hibernate 'collection accessed by multiple session' errors (2)
-* Implement generic DAO (1)
+* Troubleshoot Hibernate 'collection accessed by multiple session' errors
+* Implement generic DAO
     * This resolved Hibernate session problems which caused saveOrUpdateWithBatch tests to fail
-* Review AWS videos, set up hosting environment (2)
-* Curtis' presentation feedback (.5)
-* Curtis and Blake code review feedback (.5)
-* Create test for delete user when the user has associated batches (1)
+* Review AWS videos, set up hosting environment
+* Curtis' presentation feedback
+* Curtis and Blake code review feedback
+* Create test for delete user when the user has associated batches
+
+## Week 7
+#### 0 hours (yet) 
+*
+*
+*
+*
