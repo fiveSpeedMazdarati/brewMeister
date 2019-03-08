@@ -40,9 +40,11 @@
 * Implement Batch.java (.5)
 
 ## Week 6
-#### 3.5 hours
-* Implement generic DAO
+#### 7 hours
+* Troubleshoot Hibernate 'collection accessed by multiple session' errors (2)
+* Implement generic DAO (1)
     * This resolved Hibernate session problems which caused saveOrUpdateWithBatch tests to fail
-* Review AWS videos
-* Curtis' presentation feedback
-* Curtis and Blake code review feedback
+* Review AWS videos, set up hosting environment (2)
+* Curtis' presentation feedback (.5)
+* Curtis and Blake code review feedback (.5)
+* Create test for delete user when the user has associated batches (1)
