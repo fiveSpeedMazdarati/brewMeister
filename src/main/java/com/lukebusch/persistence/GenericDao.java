@@ -74,7 +74,7 @@ public class GenericDao<T> {
         session.close();
     }
     /**
-     * update and Entity
+     * update an Entity
      * @param entity Entity to be inserted or updated
      */
     public void saveOrUpdate(T entity) {

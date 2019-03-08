@@ -1,5 +1,6 @@
 package com.lukebusch.entity;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -33,7 +34,7 @@ public class User {
     private LocalDate birthDate;
     @Column(name="role")
     private int roleId;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Batch> batches = new HashSet<>();
     /**
      * Instantiates a new User.
