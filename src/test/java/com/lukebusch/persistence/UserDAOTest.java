@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -83,7 +84,7 @@ class UserDAOTest {
 
         User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
 
-        // grab the id of the newly added book, use it to verify the new book was created
+        // grab the id of the newly added user, use it to verify the new user was created
         int newId = genericDao.insert(testUser);
 
         User anotherTestUser = (User) genericDao.getById(newId);
@@ -102,7 +103,7 @@ class UserDAOTest {
         Batch testBatch = new Batch("White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043);
         // this way each of the entities know about one another!
         testUser.addBatch(testBatch);
-        // grab the id of the newly added book, use it to verify the new book was created
+        // grab the id of the newly added user, use it to verify the new user was created
         int newId = genericDao.insert(testUser);
 
         User anotherTestUser = (User) genericDao.getById(newId);
@@ -118,18 +119,58 @@ class UserDAOTest {
     @Test
     void deleteSuccess() {
         /*
-            -create a book, give it an id that exists in the database
-            -remove that book, then try to retrieve it from the database
-            -verify no book was retrieved
+            -create a user, give it an id that exists in the database
+            -remove that user, then try to retrieve it from the database
+            -verify no user was retrieved
          */
-        User bookToDelete = new User();
-        bookToDelete.setId(2);
+        User userToDelete = new User();
+        userToDelete.setId(2);
 
-        genericDao.delete(bookToDelete);
+        genericDao.delete(userToDelete);
 
         User deletedUser = (User) genericDao.getById(2);
 
         assertNull(deletedUser);
+    }
+    /**
+     * Verifies delete user when user has at least one batch associated
+     *
+     * When the user is deleted, the batches associated with that user should
+     * continue to exist
+     *
+     * This preserves system usage history (total batches created, etc),
+     * and allows the batch to be reassigned to someone else.
+     */
+    @Test
+    void deleteUserBatchesRemainSuccess() {
+        GenericDao anotherDao = new GenericDao( Batch.class );
+        /* user id 2 in the test database has two associated batches */
+        User userWithBatch = (User) genericDao.getById(2);
+        /* store the associated batches for this user */
+        Set<Batch> batches = (Set<Batch>) userWithBatch.getBatches();
+        logger.debug("The user's batches: "  + batches);
+
+        /*
+        * -disassociate the batches (this is the only way I can see to not delete the orphan records)
+        * -delete the user
+        * -confirm deletion
+        */
+        userWithBatch.setBatches(null);
+
+        genericDao.delete(userWithBatch);
+
+        assertNull(genericDao.getById(2));
+
+        /*
+        * try to retrieve the batches based on id
+        * confirm they have not been removed from the database
+        */
+        for (Batch batch : batches) {
+            logger.debug("test batch id: " + batch.getId());
+            Batch testBatch = (Batch) anotherDao.getById(batch.getId());
+            logger.debug("Test batch retrieved from db: " + testBatch);
+            assertNotNull(testBatch);
+        }
     }
 
     /**
