@@ -40,18 +40,19 @@
 * Implement Batch.java
 
 ## Week 6
-#### 7 hours
+#### 9.5 hours
 * Troubleshoot Hibernate 'collection accessed by multiple session' errors
 * Implement generic DAO
     * This resolved Hibernate session problems which caused saveOrUpdateWithBatch tests to fail
 * Review AWS videos, set up hosting environment
+* Deploy Week 1 exercise to AWS
 * Curtis' presentation feedback
 * Curtis and Blake code review feedback
 * Create test for delete user when the user has associated batches
 
 ## Week 7
 #### 0 hours (yet) 
-*
+* Deploy i-proj to AWS
 *
 *
 *
