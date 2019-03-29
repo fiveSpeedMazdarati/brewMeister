@@ -110,7 +110,4 @@ public class GenericDao<T> {
         return SessionFactoryProvider.getSessionFactory().openSession();
 
     }
-
-
-
 }
