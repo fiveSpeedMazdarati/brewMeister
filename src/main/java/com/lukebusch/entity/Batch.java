@@ -3,6 +3,7 @@ package com.lukebusch.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -69,8 +70,16 @@ public class Batch {
      * @return the percent alcohol by volume of this batch expressed as a double e.g. 5.25 = 5.25%
      */
     public double getABV() {
+        // make sure both specific gravity values are present, otherwise do not try to compute the value
+        if (initalSpecificGravity != 0 && finalSpecificGravity != 0) {
 
-        return ((initalSpecificGravity - finalSpecificGravity) * 131.25) ;
+            Double formattedDouble = 0.0;
+            DecimalFormat formatter = new DecimalFormat("#.##");
+            formattedDouble = Double.valueOf(formatter.format(((initalSpecificGravity - finalSpecificGravity) * 131.25)));
+            return formattedDouble;
+        }
+
+        else return 0.0;
     }
 
     /**
