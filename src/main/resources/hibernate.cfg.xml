@@ -6,6 +6,8 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/brewmeister</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- this same user exists in the prod database on AWS -->
         <property name="connection.username">brewmeister</property>
         <property name="connection.password">letsmakesomebeer</property>
 
