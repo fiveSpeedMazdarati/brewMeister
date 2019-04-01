@@ -1,0 +1,8 @@
+<Context docBase="brewMeister" path="/brewMeister" reloadable="true">
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+           driverName="com.mysql.jdbc.Driver"
+           connectionURL="jdbc:mysql://localhost:3306/brewmeister?user=tomcat&amp;password=MATCmadison"
+           userTable="user" userNameCol="user_name" userCredCol="password"
+           userRoleTable="role" roleNameCol="role_name">
+    </Realm>
+</Context>
