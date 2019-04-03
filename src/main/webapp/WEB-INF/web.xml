@@ -20,7 +20,7 @@
     <web-resource-collection>
       <web-resource-name>application</web-resource-name>
       <!-- Is this how I'd secure the entire application? -->
-      <url-pattern>/*</url-pattern>
+      <url-pattern>/getBatch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>user</role-name>

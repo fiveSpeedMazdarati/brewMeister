@@ -7,7 +7,7 @@
 <body>
     <form action="j_security_check" method="POST">
         <label>Username:</label><input type="text" name="j_username">
-        <label>Password:</label><input type="text" name="j_password">
+        <label>Password:</label><input type="password" name="j_password">
         <input type="submit" value="Log In">
     </form>
 </body>
