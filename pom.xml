@@ -13,7 +13,7 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.brewmeister.com</url>
   <dependencies>
-
+    <!-- general junit dependency -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>

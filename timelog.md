@@ -51,8 +51,23 @@
 * Create test for delete user when the user has associated batches
 
 ## Week 7
-#### 0 hours (yet) 
-* Deploy i-proj to AWS
+#### 4 hours
+* Deploy sample code to AWS
+* build groundwork for i-proj on AWS
+* Troubleshoot more Hibernate stuff
 *
-*
-*
+
+## Week 8
+#### 3 hours
+* Spring Break!
+* Read SOAP materials
+
+## Week 9
+#### 7 hours
+* Checkpoint 3
+* SOAP exercises
+* Group project research/planning
+* Feedback for Grant's presentation
+
+## Week 10
+#### 
