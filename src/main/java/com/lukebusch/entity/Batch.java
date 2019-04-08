@@ -34,6 +34,8 @@ public class Batch {
     private double finalSpecificGravity;
     @ManyToOne
     private User user;
+    @OneToOne
+    private Style style;
     /**
      * Instantiates a new Batch.
      */
