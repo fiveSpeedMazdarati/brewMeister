@@ -16,7 +16,7 @@ import java.io.IOException;
  *
  * @author lbusch
  */
-public class deleteBatch extends HttpServlet {
+public class DeleteBatch extends HttpServlet {
     // just a logger, nothing to see here...
     private final Logger logger = LogManager.getLogger(this.getClass());
 
