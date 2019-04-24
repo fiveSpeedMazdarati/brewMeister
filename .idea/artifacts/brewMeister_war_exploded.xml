@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="brewMeister:war exploded">
-    <output-path>$PROJECT_DIR$/target/Brewmeister</output-path>
+    <output-path>$PROJECT_DIR$/target/week-4-hibernate-exercise</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -14,16 +14,9 @@
           <element id="module-output" name="brewMeister" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-client:2.28" />
-          <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.5" />
-          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.28" />
-          <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.4" />
-          <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
-          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:jakarta.inject:2.5.0" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.8" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.11.1" />
           <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.10.0" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.10.0" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.2.12.Final" />
@@ -39,14 +32,10 @@
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-c3p0:5.2.12.Final" />
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.2" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.11" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
-          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: com.github.dvdme:ForecastIOLib:1.6.0" />
-          <element id="library" level="project" name="Maven: com.eclipsesource.minimal-json:minimal-json:0.9.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/Brewmeister/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/week-4-hibernate-exercise/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="brewMeister/web/Web" />
     </root>

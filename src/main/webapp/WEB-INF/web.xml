@@ -25,6 +25,7 @@
     <auth-constraint>
       <role-name>user</role-name>
       <role-name>administrator</role-name>
+      <role-name>viewer</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -34,6 +35,10 @@
 
   <security-role>
     <role-name>administrator</role-name>
+  </security-role>
+  
+  <security-role>
+    <role-name>viewer</role-name>
   </security-role>
 
 </web-app>

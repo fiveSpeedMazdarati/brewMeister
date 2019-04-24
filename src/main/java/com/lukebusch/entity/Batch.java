@@ -34,7 +34,7 @@ public class Batch {
     private double finalSpecificGravity;
     @ManyToOne
     private User user;
-    @OneToOne
+    @ManyToOne
     private Style style;
     /**
      * Instantiates a new Batch.
@@ -262,6 +262,24 @@ public class Batch {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    /**
+     * Gets style
+     *
+     * @return the style associated with this beer
+     */
+    public Style getStyle() {
+        return this.style;
+    }
+
+    /**
+     * Sets the style of this batch
+     *
+     * @param style the new beer style for this batch
+     */
+    public void setStyle(Style style) {
+        this.style = style;
     }
 
     @Override

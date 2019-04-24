@@ -17,7 +17,7 @@
         </div>
         <div class="col col-md-auto">
                 <form action="j_security_check" method="POST">
-                    <label>Username:</label><input type="text" name="j_username">
+                    <label>Username:</label><input type="text" name="j_username"><br />
                     <label>Password:</label><input type="password" name="j_password">
                     <input type="submit" value="Log In">
                 </form>

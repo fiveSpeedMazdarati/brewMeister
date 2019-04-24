@@ -20,6 +20,8 @@
 
         <mapping class="com.lukebusch.entity.User" />
         <mapping class="com.lukebusch.entity.Batch" />
+        <mapping class="com.lukebusch.entity.Role" />
+        <mapping class="com.lukebusch.entity.Style" />
     </session-factory>
 
 </hibernate-configuration>
