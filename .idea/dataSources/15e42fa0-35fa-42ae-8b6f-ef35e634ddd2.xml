@@ -966,16 +966,21 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="241" parent="227" name="batch_user_id_fk">
+    <column id="241" parent="227" name="style_id">
+      <Position>11</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="242" parent="227" name="batch_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="242" parent="227" name="PRIMARY">
+    <key id="243" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="243" parent="227" name="batch_user_id_fk">
+    <foreign-key id="244" parent="227" name="batch_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>brewmeister_test</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -983,101 +988,111 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="244" parent="228" name="id">
+    <column id="245" parent="228" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="228" name="name">
+    <column id="246" parent="228" name="role_name">
       <Position>2</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="246" parent="228" name="role_name_uindex">
-      <ColNames>name</ColNames>
+    <column id="247" parent="228" name="user_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="228" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="249" parent="228" name="role_name_uindex">
+      <ColNames>role_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="247" parent="228" name="PRIMARY">
+    <key id="250" parent="228" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="248" parent="228" name="role_name_uindex">
-      <ColNames>name</ColNames>
+    <key id="251" parent="228" name="role_name_uindex">
+      <ColNames>role_name</ColNames>
       <UnderlyingIndexName>role_name_uindex</UnderlyingIndexName>
     </key>
-    <column id="249" parent="229" name="id">
+    <column id="252" parent="229" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="229" name="name">
+    <column id="253" parent="229" name="name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="229" name="description">
+    <column id="254" parent="229" name="description">
       <Position>3</Position>
       <DataType>varchar(250)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="252" parent="229" name="PRIMARY">
+    <key id="255" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="253" parent="230" name="id">
+    <column id="256" parent="230" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="230" name="user_name">
+    <column id="257" parent="230" name="user_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="230" name="password">
+    <column id="258" parent="230" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="230" name="first_name">
+    <column id="259" parent="230" name="first_name">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="230" name="last_name">
+    <column id="260" parent="230" name="last_name">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="230" name="zip_code">
+    <column id="261" parent="230" name="zip_code">
       <Position>6</Position>
       <DataType>varchar(5)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="230" name="birthdate">
+    <column id="262" parent="230" name="birthdate">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="230" name="role">
+    <column id="263" parent="230" name="role">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="261" parent="230" name="PRIMARY">
+    <key id="264" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

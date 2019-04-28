@@ -36,7 +36,7 @@ public class User {
     private int roleId;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Batch> batches = new HashSet<>();
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "roleName", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
     /**
      * Instantiates a new User.
@@ -184,7 +184,7 @@ public class User {
      * Gets the user's roles
      * @return the roles
      */
-    /*
+
     public Set<Role> getRoles() {
         return roles;
     }
@@ -193,11 +193,11 @@ public class User {
      * Sets the user's roles
      * @param roles the roles
      */
-    /*
+
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-    */
+
     /**
      * Add batch.
      *
@@ -222,7 +222,7 @@ public class User {
      * Add a role to the current user
      * @param role the role to add
      */
-    /*
+
     public void addRole(Role role) {
         roles.add(role);
         role.setUser(this);
@@ -232,12 +232,12 @@ public class User {
      * Remove a role from the current user
      * @param role the role to remove
      */
-    /*
+
     public void removeRole(Role role) {
         roles.remove(role);
         role.setUser(null);
     }
-    */
+
     /**
      * Sets batches.
      *

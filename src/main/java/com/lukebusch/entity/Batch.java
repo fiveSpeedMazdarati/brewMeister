@@ -295,6 +295,7 @@ public class Batch {
                 ", initalSpecificGravity=" + initalSpecificGravity +
                 ", finalSpecificGravity=" + finalSpecificGravity +
                 ", user=" + user +
+                ", style=" + style +
                 '}';
     }
 

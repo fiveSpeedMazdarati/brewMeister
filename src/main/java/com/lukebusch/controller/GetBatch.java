@@ -28,8 +28,9 @@ public class GetBatch extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String id = req.getParameter("id");
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
-        Batch batch = dao.getById(1); // TODO: change this to a variable once everything is working with a hardcoded value
+        Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
         logger.debug("Retrieving batch #2...");
         logger.debug(batch);
         req.setAttribute("batch", batch);

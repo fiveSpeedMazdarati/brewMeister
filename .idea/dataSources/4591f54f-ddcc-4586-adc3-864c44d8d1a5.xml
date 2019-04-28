@@ -967,121 +967,146 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="240" parent="226" name="PRIMARY">
+    <column id="240" parent="226" name="style_id">
+      <Position>11</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="241" parent="226" name="batch_user_id_fk">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="242" parent="226" name="batch_style_id_fk">
+      <ColNames>style_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="243" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="241" parent="227" name="id">
+    <foreign-key id="244" parent="226" name="batch_user_id_fk">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>brewmeister</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="245" parent="226" name="batch_style_id_fk">
+      <ColNames>style_id</ColNames>
+      <RefSchemaName>brewmeister</RefSchemaName>
+      <RefTableName>style</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="246" parent="227" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="227" name="role_name">
+    <column id="247" parent="227" name="role_name">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="227" name="user_name">
+    <column id="248" parent="227" name="user_name">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="227" name="user_id">
+    <column id="249" parent="227" name="user_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="245" parent="227" name="roles_role_uindex">
+    <index id="250" parent="227" name="roles_role_uindex">
       <ColNames>role_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="246" parent="227" name="PRIMARY">
+    <key id="251" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="247" parent="227" name="roles_role_uindex">
+    <key id="252" parent="227" name="roles_role_uindex">
       <ColNames>role_name</ColNames>
       <UnderlyingIndexName>roles_role_uindex</UnderlyingIndexName>
     </key>
-    <column id="248" parent="228" name="id">
+    <column id="253" parent="228" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="228" name="name">
+    <column id="254" parent="228" name="name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="228" name="description">
+    <column id="255" parent="228" name="description">
       <Position>3</Position>
       <DataType>varchar(250)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="251" parent="228" name="PRIMARY">
+    <key id="256" parent="228" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="252" parent="229" name="id">
+    <column id="257" parent="229" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="229" name="user_name">
+    <column id="258" parent="229" name="user_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="229" name="password">
+    <column id="259" parent="229" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="229" name="first_name">
+    <column id="260" parent="229" name="first_name">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="229" name="last_name">
+    <column id="261" parent="229" name="last_name">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="229" name="zip_code">
+    <column id="262" parent="229" name="zip_code">
       <Position>6</Position>
       <DataType>varchar(5)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="229" name="birthdate">
+    <column id="263" parent="229" name="birthdate">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="229" name="role">
+    <column id="264" parent="229" name="role">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>2</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="260" parent="229" name="PRIMARY">
+    <key id="265" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

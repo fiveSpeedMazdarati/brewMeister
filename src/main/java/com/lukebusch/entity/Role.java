@@ -13,7 +13,7 @@ public class Role {
     @GenericGenerator(name="native", strategy="native")
     private int id;
 
-    // @ManyToOne
+    @ManyToOne
     private User user;
 
     @Column(name = "user_name")

@@ -12,33 +12,23 @@
     <auth-method>FORM</auth-method>
     <form-login-config>
       <form-login-page>/login.jsp</form-login-page>
-      <form-error-page>/loginError.jsp</form-error-page>
+      <!-- send them back to the login page to login again -->
+      <form-error-page>/login.jsp</form-error-page>
     </form-login-config>
   </login-config>
 
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>application</web-resource-name>
-      <!-- Is this how I'd secure the entire application? -->
-      <url-pattern>/getBatch</url-pattern>
+      <url-pattern>/getBatch/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>user</role-name>
       <role-name>administrator</role-name>
-      <role-name>viewer</role-name>
     </auth-constraint>
   </security-constraint>
 
   <security-role>
-    <role-name>user</role-name>
-  </security-role>
-
-  <security-role>
     <role-name>administrator</role-name>
-  </security-role>
-  
-  <security-role>
-    <role-name>viewer</role-name>
   </security-role>
 
 </web-app>

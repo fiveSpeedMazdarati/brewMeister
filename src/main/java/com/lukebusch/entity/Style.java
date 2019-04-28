@@ -3,8 +3,10 @@ package com.lukebusch.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type Style.
@@ -18,12 +20,21 @@ public class Style {
     @GenericGenerator(name="native", strategy="native")
     @Column(name="id")
     private int id;
-    @Column(name="name")
     private String name;
-    @Column(name="description")
     private String description;
+
     @OneToMany
-    private List<Batch> batches;
+    @JoinColumn(name = "id")
+    private Set<Batch> batches = new HashSet<>();
+
+    public Set<Batch> getBatches() {
+        return batches;
+    }
+
+    public void setBatches(Set<Batch> batches) {
+        this.batches = batches;
+    }
+
 
     /**
      * Gets id
