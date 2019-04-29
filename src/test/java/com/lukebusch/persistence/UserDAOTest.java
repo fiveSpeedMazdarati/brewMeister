@@ -109,8 +109,6 @@ class UserDAOTest {
         User anotherTestUser = (User) genericDao.getById(newId);
         assertEquals(testUser, anotherTestUser);
 
-
-
     }
 
     /**
