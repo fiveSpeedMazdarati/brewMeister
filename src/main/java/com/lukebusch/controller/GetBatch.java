@@ -30,11 +30,11 @@ public class GetBatch extends HttpServlet {
 
         String id = req.getParameter("id");
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
-        Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
+        Batch batch = dao.getById(Integer.valueOf(2)); // TODO: change this to a variable once everything is working with a hardcoded value
         logger.debug("Retrieving batch #2...");
         logger.debug(batch);
         req.setAttribute("batch", batch);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewBatch.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
         dispatcher.forward(req, resp);
 
     }

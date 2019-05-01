@@ -6,11 +6,16 @@
     <%@ include file="bootstrap-header.jsp"%>
 </head>
 <body>
-<div>All of your batches!</div>
-<c:forEach items="batches">
+<div class="container-fluid">
+    <div>All of your batches!</div>
     <div>
-        ${}
+    <c:forEach var="batch" items="${batches}">
+        <div>
+            <a href="/getBatch?id=${batch.id}">${batch.title}</a><br />
+            ${batch.style.description} ABV: ${batch.ABV}%<br />
+        </div>
+    </c:forEach>
     </div>
-</c:forEach>
+</div>
 </body>
 </html>

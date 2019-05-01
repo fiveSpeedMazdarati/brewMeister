@@ -20,7 +20,8 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>application</web-resource-name>
-      <url-pattern>/getBatch/*</url-pattern>
+      <url-pattern>/getBatch</url-pattern>
+      <url-pattern>/getAllBatchesForUser</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>administrator</role-name>
