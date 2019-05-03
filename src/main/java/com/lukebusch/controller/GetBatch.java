@@ -27,6 +27,14 @@ public class GetBatch extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        handleRequest(req, resp);
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        this.doGet(req, resp);
+    }
+
+    private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String id = req.getParameter("id");
         logger.info("param collected: " + id);
@@ -35,12 +43,7 @@ public class GetBatch extends HttpServlet {
         logger.debug("Retrieving batch #" + id);
         logger.debug(batch);
         req.setAttribute("batch", batch);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewBatch.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
         dispatcher.forward(req, resp);
-
-    }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        this.doGet(req, resp);
     }
 }

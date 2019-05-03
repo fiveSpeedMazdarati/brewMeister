@@ -10,7 +10,7 @@
         <div class="row">
             <c:forEach var="batch" items="${batches}">
                 <div class="panel panel-default col-lg-6">
-                    <div class="panel-heading"><a href="/getBatch?id=${batch.id}">${batch.title}</a><span class="pull-right">${batch.ABV}%</span></div>
+                    <div class="panel-heading"><a href="getBatch?id=${batch.id}">${batch.title}</a><span class="pull-right">${batch.ABV}%</span></div>
                     <div class="panel-body">${batch.style.name}</div>
                 </div>
             </c:forEach>

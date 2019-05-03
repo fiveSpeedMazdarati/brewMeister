@@ -6,13 +6,13 @@
     <title>View a Batch</title>
 </head>
 <body>
-<p>
   <div class="panel panel-default">
-    <div class = "panel panel-header">ID: ${batch.id}</div>
-    Title: <h3>${batch.title}</h3>
-    Brew Date: ${batch.brewDate}<br />
-    ABV: ${batch.ABV}%
+    <div class = "panel-header">ID: ${batch.id}</div>
+    <div class="panel-body">
+        Title: <h3>${batch.title}</h3>
+        Brew Date: ${batch.brewDate}<br />
+        ABV: ${batch.ABV}%
+    </div>
   </div>
-</p>
 </body>
 </html>
