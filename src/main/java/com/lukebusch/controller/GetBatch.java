@@ -29,12 +29,13 @@ public class GetBatch extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String id = req.getParameter("id");
+        logger.info("param collected: " + id);
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
-        Batch batch = dao.getById(Integer.valueOf(2)); // TODO: change this to a variable once everything is working with a hardcoded value
-        logger.debug("Retrieving batch #2...");
+        Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
+        logger.debug("Retrieving batch #" + id);
         logger.debug(batch);
         req.setAttribute("batch", batch);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewBatch.jsp");
         dispatcher.forward(req, resp);
 
     }

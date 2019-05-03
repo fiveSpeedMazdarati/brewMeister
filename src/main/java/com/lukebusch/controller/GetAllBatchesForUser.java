@@ -26,7 +26,7 @@ public class GetAllBatchesForUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String loggedInUser = req.getRemoteUser();
-        logger.info("Username " +loggedInUser + "successfully authenticated.");
+        logger.info("Username " +loggedInUser + " successfully authenticated.");
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
         List<Batch> batches = dao.getAll();
         logger.info("Getting all batches from the db");

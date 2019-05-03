@@ -7,10 +7,12 @@
 </head>
 <body>
 <p>
-    ID: ${batch.id}<br />
-    Title: ${batch.title}<br />
+  <div class="panel panel-default">
+    <div class = "panel panel-header">ID: ${batch.id}</div>
+    Title: <h3>${batch.title}</h3>
     Brew Date: ${batch.brewDate}<br />
     ABV: ${batch.ABV}%
+  </div>
 </p>
 </body>
 </html>

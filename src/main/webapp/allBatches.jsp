@@ -2,20 +2,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>All Batches</title>
     <%@ include file="bootstrap-header.jsp"%>
+    <title>Your Batches | Brewmeister</title>
 </head>
 <body>
 <div class="container-fluid">
-    <div>All of your batches!</div>
-    <div>
+
     <c:forEach var="batch" items="${batches}">
-        <div>
-            <a href="/getBatch?id=${batch.id}">${batch.title}</a><br />
-            ${batch.style.description} ABV: ${batch.ABV}%<br />
+        <div class="panel panel-default col-lg-6">
+            <div class="panel-heading"><a href="/getBatch?id=${batch.id}">${batch.title}</a><span class="pull-right">${batch.ABV}%</span></div>
+            <div class="panel-body">${batch.style.name}</div>
+        </div>
+        <div class="panel panel-default col-lg-6">
+          <div class="panel-body">This is some more content used as a placeholder.</div>
         </div>
     </c:forEach>
-    </div>
 </div>
 </body>
 </html>
