@@ -8,17 +8,17 @@
 <body>
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-        </div>
-        <div class="col col-md-auto">
-                <form action="j_security_check" method="POST">
-                    <label>Username:</label><input type="text" name="j_username"><br />
-                    <label>Password:</label><input type="password" name="j_password">
-                    <input type="submit" value="Log In">
-                </form>
-        </div>
-        <div class="col col-lg-2">
-        </div>
+        <form action="j_security_check" method="POST">
+            <div class="form-group">
+              <label for="j_username">Username:</label>
+              <input type="text" name="j_username" id="j_username">
+            </div>
+            <div class="form-group">
+              <label for="j_password">Password:</label>
+              <input type="password" name="j_password" id="j_password">
+            </div>
+            <input class="btn btn-submit" type="submit" value="Log In">
+        </form>
     </div>
 </div>
 </body>

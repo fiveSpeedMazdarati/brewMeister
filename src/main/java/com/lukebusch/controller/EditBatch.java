@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet (name="GetBatch"
-            , urlPatterns = { "/getBatch" }
-            )
+@WebServlet (name="EditBatch"
+        , urlPatterns = { "/editBatch" }
+)
 /**
- * A servlet to retrieve a batch from the database
+ * A servlet to get a batch from the database for the user to edit
  *
  * @author lbusch
  */
-public class GetBatch extends HttpServlet {
+public class EditBatch extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
@@ -37,7 +37,7 @@ public class GetBatch extends HttpServlet {
     private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String id = req.getParameter("id");
-        logger.info("param collected: " + id);
+        logger.debug("param collected: " + id);
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
         Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
         logger.debug("Retrieving batch #" + id);
@@ -46,7 +46,7 @@ public class GetBatch extends HttpServlet {
 
         // get the weather data here, put it into the request
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("editBatch.jsp");
         dispatcher.forward(req, resp);
     }
 }

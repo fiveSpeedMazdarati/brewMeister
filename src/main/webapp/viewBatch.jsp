@@ -6,13 +6,18 @@
     <title>View a Batch</title>
 </head>
 <body>
-  <div class="panel panel-default">
-    <div class = "panel-header">ID: ${batch.id}</div>
-    <div class="panel-body">
-        Title: <h3>${batch.title}</h3>
-        Brew Date: ${batch.brewDate}<br />
-        ABV: ${batch.ABV}%
+<div class="container">
+  <div class="row ">
+    <div class="panel panel-default">
+      <div class = "panel-header">ID: ${batch.id}</div>
+      <div class="panel-body">
+             <span class="h3">Title: ${batch.title}</span>
+              Brew Date: ${batch.brewDate}<br />
+              ABV: ${batch.ABV}%<br />
+        <a href="editBatch?id=${batch.id}" class="btn btn-default">Edit this batch</a>
+      </div>
     </div>
   </div>
+</div>
 </body>
 </html>

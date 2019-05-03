@@ -29,7 +29,7 @@ public class GetAllBatchesForUser extends HttpServlet {
         logger.info("Username " +loggedInUser + " successfully authenticated.");
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
         List<Batch> batches = dao.getAll();
-        logger.info("Getting all batches from the db");
+        logger.debug("Getting all batches from the db");
         logger.debug(batches);
         req.setAttribute("loggedInUserName", loggedInUser);
         req.setAttribute("batches", batches);
