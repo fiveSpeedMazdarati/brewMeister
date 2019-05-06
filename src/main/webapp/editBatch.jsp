@@ -8,13 +8,19 @@
 <body>
 <div class="container">
     <div class="row ">
-        <div class="panel panel-default">
+        <div class="panel panel-default col-xs-12 col-md-6">
             <div class = "panel-header">ID: ${batch.id}</div>
             <div class="panel-body">
                 <form>
-                    <label>Title:</label><input type="text" value="${batch.title}" name="title"><br />
-                    <label>Brew Date:</label><input type="date" value="${batch.brewDate}" name="brewDate"><br />
-                    <label>ABV:</label><input type="text" disabled="true" value="${batch.ABV}%"><br /><br />
+                    <div class="input-group">
+                      <label>Title:</label><input type="text" value="${batch.title}" name="title"><br />
+                    </div>
+                    <div class="input-group">
+                      <label>Brew Date:</label><input type="date" value="${batch.brewDate}" name="brewDate"><br />
+                    </div>
+                    <div class="input-group">
+                      <label>ABV:</label><input type="text" disabled="true" value="${batch.ABV}%"><span class="input-group-addon">%</span>
+                    </div>
                     <input type="submit" formaction="/updateBatch" formmethod="POST">
                 </form>
             </div>
