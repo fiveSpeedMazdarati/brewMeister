@@ -33,7 +33,7 @@ public class UpdateBatch extends HttpServlet {
         originalBatch = (Batch) dao.getById(Integer.valueOf(request.getParameter("id")));
 
         // get the info from the request and update the batch
-
+        logger.debug("In the update batch servlet");
 
         //  update the batch in the database
         dao.saveOrUpdate(originalBatch);
@@ -42,7 +42,7 @@ public class UpdateBatch extends HttpServlet {
         request.setAttribute("updatedBatchId", originalBatch.getId());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/getAllBatchesForUser");
-        dispatcher.forward(request, response);
+        dispatcher.include(request, response);
 
     }
 

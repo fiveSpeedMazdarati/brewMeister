@@ -7,7 +7,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="alert alert-success" role="alert">${}</div>
+        <c:if test="${batchUpdated==true}">
+          <div class="alert alert-success" role="alert">${updatedBatchTitle} (Batch #${updatedBatchId}) updated successfully.</div>
+        </c:if>
         <div class="row">
             <c:forEach var="batch" items="${batches}">
                 <div class="panel panel-default col-xs-12 col-md-4 col-lg-3">
