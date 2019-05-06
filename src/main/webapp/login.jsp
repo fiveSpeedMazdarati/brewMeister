@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center center-block">
         <form action="j_security_check" method="POST">
             <div class="form-group">
               <label for="j_username">Username:</label>

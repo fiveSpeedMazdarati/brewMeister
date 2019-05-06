@@ -46,6 +46,7 @@ class UserDAOTest {
     void getByIdSuccess() {
         logger.info("running getByID test");
         User retrievedUser = (User)genericDao.getById(2);
+
         assertEquals("BigAl", retrievedUser.getUserName());
         assertEquals("Albert", retrievedUser.getFirstName());
         assertEquals(2, retrievedUser.getId());

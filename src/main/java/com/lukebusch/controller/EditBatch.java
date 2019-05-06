@@ -36,12 +36,17 @@ public class EditBatch extends HttpServlet {
 
     private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
+
         String id = req.getParameter("id");
         logger.debug("param collected: " + id);
-        GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
+
+
         Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
-        logger.debug("Retrieving batch #" + id);
-        logger.debug(batch);
+        // update the batch using the values from the request
+
+        // save the updated object to the database using the same id number so the batch is replaced
+
         req.setAttribute("batch", batch);
 
         // get the weather data here, put it into the request

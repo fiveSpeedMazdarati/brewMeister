@@ -6,6 +6,7 @@ import com.lukebusch.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,17 +25,24 @@ public class UpdateBatch extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        // stuff to get the info from the jsp and update the appropriate record in the database
-        Batch updatedBatch = new Batch();
-        updatedBatch.setId(Integer.valueOf(request.getParameter("id")));
-        updatedBatch.setUser(null); //TODO: DO NOT LEAVE THIS!!
-        updatedBatch.setTitle(request.getParameter("title"));
         GenericDao dao = DaoFactory.createDao( Batch.class );
 
-        dao.saveOrUpdate(updatedBatch);
+        Batch originalBatch;
+
+        // get the original batch values from the database using the id passed along from the page
+        originalBatch = (Batch) dao.getById(Integer.valueOf(request.getParameter("id")));
+
+        // get the info from the request and update the batch
 
 
+        //  update the batch in the database
+        dao.saveOrUpdate(originalBatch);
+        request.setAttribute("batchUpdated", true);
+        request.setAttribute("updatedBatchTitle", originalBatch.getTitle());
+        request.setAttribute("updatedBatchId", originalBatch.getId());
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/getAllBatchesForUser");
+        dispatcher.forward(request, response);
 
     }
 

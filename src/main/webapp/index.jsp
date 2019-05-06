@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 <h2>Brewmeister</h2>
-    <div class="panel panel-default">
+    <div class="panel panel-default center-block">
     <p>You've found BREWMEISTER!</p>
       <div>
         <a href="getAllBatchesForUser"><span class="btn">Login</span></a>

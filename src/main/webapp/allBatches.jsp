@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="alert alert-success" role="alert">${}</div>
         <div class="row">
             <c:forEach var="batch" items="${batches}">
                 <div class="panel panel-default col-xs-12 col-md-4 col-lg-3">

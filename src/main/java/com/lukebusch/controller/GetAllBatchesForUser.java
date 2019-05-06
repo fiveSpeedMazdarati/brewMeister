@@ -27,12 +27,23 @@ public class GetAllBatchesForUser extends HttpServlet {
 
         String loggedInUser = req.getRemoteUser();
         logger.info("Username " +loggedInUser + " successfully authenticated.");
-        GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
-        List<Batch> batches = dao.getAll();
+        //a dao to get batches
+        GenericDao<Batch> batchDao = DaoFactory.createDao(Batch.class);
+        List<Batch> batches = batchDao.getAll();
         logger.debug("Getting all batches from the db");
         logger.debug(batches);
+
+        //another dao to get the user information
+        GenericDao<User> userDao = DaoFactory.createDao( User.class );
+
         req.setAttribute("loggedInUserName", loggedInUser);
         req.setAttribute("batches", batches);
+
+        // pass along the info from the update batch servlet (will be empty if the program did not come here from the UpdateBatch servlet
+        req.setAttribute("batchUpdated", req.getAttribute("batchUpdated"));
+        req.setAttribute("updatedBatchTitle", req.getAttribute("updatedBatchTitle"));
+        req.setAttribute("UpdatedBatchId", req.getAttribute("updatedBatchId"));
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allBatches.jsp");
         dispatcher.forward(req, resp);
 
