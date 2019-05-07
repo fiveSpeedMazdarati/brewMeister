@@ -54,9 +54,21 @@ public class GenericDao<T> {
      * @param id entity id to search by
      * @return entity
      */
+    @SuppressWarnings("unchecked")
     public <T> T getById(int id) {
         Session session = getSession();
         T entity = (T)session.get(type, id);
+        session.close();
+        return entity;
+    }
+
+    /**
+     * gets an entity by a specific property
+     */
+    @SuppressWarnings("unchecked")
+    public <T> T getByProperty(String property) {
+        Session session = getSession();
+        T entity = (T)session.get(type, property);
         session.close();
         return entity;
     }
@@ -90,7 +102,7 @@ public class GenericDao<T> {
      * @param entity Entity to be inserted or updated
      */
     public int insert(T entity) {
-        int id = 0;
+        int id;
 
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
