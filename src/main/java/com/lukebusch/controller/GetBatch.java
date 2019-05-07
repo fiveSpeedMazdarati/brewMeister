@@ -39,7 +39,7 @@ public class GetBatch extends HttpServlet {
         String id = req.getParameter("id");
         logger.info("param collected: " + id);
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
-        Batch batch = dao.getById(Integer.valueOf(id)); // TODO: change this to a variable once everything is working with a hardcoded value
+        Batch batch = dao.getById(Integer.valueOf(id));
         logger.debug("Retrieving batch #" + id);
         logger.debug(batch);
         req.setAttribute("batch", batch);

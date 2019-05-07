@@ -1,8 +1,13 @@
 package com.lukebusch.controller;
 
+import com.lukebusch.entity.Batch;
+import com.lukebusch.persistence.GenericDao;
+import com.lukebusch.persistence.SessionFactoryProvider;
+import com.lukebusch.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +35,23 @@ public class DeleteBatch extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // stuff to delete the selected batch here
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        GenericDao<Batch> batchGenericDao = DaoFactory.createDao( Batch.class );
+        Batch batchToDelete = batchGenericDao.getById(Integer.valueOf(request.getParameter("id")));
+        logger.info("Deleting batch " + batchToDelete.getId());
+        batchGenericDao.delete(batchToDelete);
+
+        request.setAttribute("deletedBatch", true);
+        request.setAttribute("deletedBatchId", batchToDelete.getId());
+        request.setAttribute("deletedBatchName", batchToDelete.getTitle());
+
+        // send them off to the new batch page
+        RequestDispatcher dispatcher = request.getRequestDispatcher("allBatches.jsp");
+        dispatcher.include(request, response);
+
     }
 
 
