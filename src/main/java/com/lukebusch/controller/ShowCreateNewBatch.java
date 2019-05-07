@@ -32,9 +32,6 @@ public class ShowCreateNewBatch extends HttpServlet {
 
     private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //get the logged in user
-
-
         // send them off to the new batch page
         RequestDispatcher dispatcher = req.getRequestDispatcher("newBatch.jsp");
         dispatcher.forward(req, resp);
