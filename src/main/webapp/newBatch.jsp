@@ -17,7 +17,9 @@
         </div>
         <div class="form-group">
           <label for="style">Style</label>
-          <input type="select" class="form-control" id="style" name="style" placeholder="Batch Name">
+          <select class="form-control" id="style" name="style">
+            <!-- all of the descriptions from the Style table go here as options -->
+          </select>
         </div>
         <div class="form-group">
           <label for="title">Initial Specific Gravity</label>
