@@ -1,18 +1,46 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 5/6/19
-  Time: 5:52 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <%@ include file="bootstrap-header.jsp"%>
+    <title>New Batch | Brewmeister</title>
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=pxx223jnojpv1eswnsldybzgdsk1xk3pbq3halc5d2hqm5d9"></script>
+    <script>tinymce.init({selector:#tinymce});</script>
 </head>
 <body>
-
-<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=pxx223jnojpv1eswnsldybzgdsk1xk3pbq3halc5d2hqm5d9"></script>
-
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="col-lg-6 xs-12">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Batch Name">
+      </div>
+      <div class="form-group">
+        <label for="style">Style</label>
+        <input type="select" class="form-control" id="style" name="style" placeholder="Batch Name">
+      </div>
+      <div class="form-group">
+        <label for="title">Initial Specific Gravity</label>
+        <input type="text" class="form-control" name="initial-specific-gravity" placeholder="Batch Name">
+      </div>
+      <div class="form-group">
+        <label for="tinymce">Notes</label>
+        <textarea class="form-control" id="tinymce" name="tinymce"></textarea>
+      </div>
+    </div>
+    <div class="col-lg-6 col-xs-12">
+      <div class="form-group">
+        <label for="brew-date">Brew Date</label>
+        <input type="date" class="form-control" id="brew-date" name="brew-date" placeholder="Batch Name">
+      </div>
+      <div class="form-group">
+        <label for="bottle-date">Projected Bottle Date</label>
+        <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name">
+      </div>
+        <input type="submit" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="multipart/form-data">
+      </div>
+      </form>
+  </div>
+</div>
 </body>
 </html>
