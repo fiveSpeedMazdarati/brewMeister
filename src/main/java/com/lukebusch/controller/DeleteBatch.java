@@ -49,7 +49,7 @@ public class DeleteBatch extends HttpServlet {
         request.setAttribute("deletedBatchName", batchToDelete.getTitle());
 
         // send them off to the new batch page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("GetAllBatchesForUser.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("getAllBatchesForUser");
         dispatcher.include(request, response);
 
     }
