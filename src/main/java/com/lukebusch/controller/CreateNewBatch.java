@@ -19,7 +19,7 @@ import java.time.LocalDate;
  * a class to create a new batch with the given information
  * @author lbusch
  */
-@WebServlet(name = "ShowCreateNewBatch", urlPatterns = "/showCreateNewBatch")
+@WebServlet(name = "CreateNewBatch", urlPatterns = "/createNewBatch")
 public class CreateNewBatch extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -38,12 +38,18 @@ public class CreateNewBatch extends HttpServlet {
         newBatch.setBrewDate(LocalDate.parse((request.getParameter("brew-date"))));
         newBatch.setBottleDate(LocalDate.parse((request.getParameter("bottle-date"))));
         newBatch.setInitalSpecificGravity(Double.valueOf(request.getParameter("initial-specific-gravity")));
-
+        newBatch.setNotes(request.getParameter("tinymce"));
+        // newBatch.setUser(); //TODO: add the logged in user
         logger.debug("new batch: " + newBatch);
 
-        // int newBatchId = dao.insert(newBatch);
-        // request.setAttribute("newBatchId", newBatchId);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("getAllBatchesForUser.jsp");
+        int newBatchId = dao.insert(newBatch);
+
+        request.setAttribute("newBatchId", newBatchId);
+        request.setAttribute("newBatchName", newBatch.getTitle());
+        request.setAttribute("newBatchAdded", true);
+        logger.debug(request);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("getAllBatchesForUser");
         dispatcher.include(request, response);
     }
 }

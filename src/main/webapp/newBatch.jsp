@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <form>
-      <div class="col-md-6 xs-12">
+      <div class="col-md-6 col-xs-12">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="title" name="title" placeholder="Batch Name">
@@ -35,12 +35,12 @@
           <label for="brew-date">Brew Date</label>
           <input type="date" class="form-control" id="brew-date" name="brew-date" placeholder="Batch Name">
         </div>
-      <div class="form-group">
-        <label for="bottle-date">Projected Bottle Date</label>
-        <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name">
+        <div class="form-group">
+          <label for="bottle-date">Projected Bottle Date</label>
+          <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name">
+        </div>
       </div>
-        <input type="submit" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="multipart/form-data">
-      </div>
+      <input type="submit" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="application/x-www-form-urlencoded">
     </form>
   </div>
 </div>

@@ -32,6 +32,7 @@ public class Batch {
     private double initalSpecificGravity;
     @Column(name="final_specific_gravity")
     private double finalSpecificGravity;
+    private String notes;
     @ManyToOne
     private User user;
     @ManyToOne
@@ -247,6 +248,22 @@ public class Batch {
     }
 
     /**
+     * Gets the notes for this batch
+     * @return the note made for this batch
+     */
+    public String getNotes() {
+        return notes;
+    }
+
+    /**
+     * Sets the notes for this batch. This method will not append notes to existing!
+     * @param notes the notes for this batch
+     */
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    /**
      * Gets user.
      *
      * @return the user
@@ -294,6 +311,7 @@ public class Batch {
                 ", expirationDate=" + expirationDate +
                 ", initalSpecificGravity=" + initalSpecificGravity +
                 ", finalSpecificGravity=" + finalSpecificGravity +
+                ", notes=" + notes +
                 ", user=" + user +
                 ", style=" + style +
                 '}';
