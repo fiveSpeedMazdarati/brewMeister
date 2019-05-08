@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.matc.exercises</groupId>
-    <artifactId>brewMeister</artifactId>
+    <groupId>com.lukebusch</groupId>
+    <artifactId>brewmeister</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>Brewmeister</name>
-    <url>http://www.brewmeister.com</url>
+    <url>http://www.brewmeisterapp.com/</url>
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -35,6 +35,7 @@
             <artifactId>log4j-core</artifactId>
             <version>2.10.0</version>
         </dependency>
+        <!-- jUnit test framework -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -71,6 +72,18 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
             <version>5.2.12.Final</version>
+        </dependency>
+        <!-- Jackson JSON <-> Object mapper -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.23.2</version>
         </dependency>
 
     </dependencies>

@@ -70,4 +70,27 @@
 * Feedback for Grant's presentation
 
 ## Week 10
+#### 9 hours
+* Write addparrot() POST action for API
+* Troubleshoot writing to Linux file system outside of web application directory
+
+## Week 11
+####
+
+## Week 12
+#### 6 hours
+* research web APIs
+    * weather data 
+    * latitude and longitude translation from ZIP
+    * discovered Java implementation of Dark Ski weather API on GitHub
+* troubleshoot failing tests, even though the application works properly
+* revise project plan and scope
+* review screen layouts
+
+## Week 13
+#### 14 hours
+* basic RUD (C still needs work) operations and application flow. I discovered request.include() which is pretty handy when sending the work done by one servlet off to another servlet
+* spruce up display, add Bootstrap styles (still needs a lot of work)
+
+## Week 14
 #### 

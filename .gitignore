@@ -56,3 +56,8 @@ fabric.properties
 logs/logs.log
 logs/generated_html/
 logs
+
+#files containing secret keys and passwords
+webservices.properties
+database.properties
+hibernate.cfg.xml
