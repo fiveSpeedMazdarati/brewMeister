@@ -3,6 +3,7 @@ package com.lukebusch.controller;
 import com.lukebusch.entity.Batch;
 import com.lukebusch.persistence.GenericDao;
 import com.lukebusch.util.DaoFactory;
+import com.lukebusch.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,7 +45,10 @@ public class GetBatch extends HttpServlet {
         logger.debug(batch);
         req.setAttribute("batch", batch);
 
-        // get the weather data here, put it into the request
+        //TODO: get the weather data here, put it into the request
+        //TODO: this should probably go into the API client class, not here
+        PropertiesLoader propertiesLoader = new PropertiesLoader();
+        propertiesLoader.loadWebserviceProperties();
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
         dispatcher.forward(req, resp);
