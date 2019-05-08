@@ -12,7 +12,7 @@
         </c:if>
         <div class="row">
             <c:forEach var="batch" items="${batches}">
-                <div class="panel panel-default col-xs-12 col-md-4 col-xl-3">
+                <div class="panel panel-default col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="panel-heading"><a href="getBatch?id=${batch.id}"><span class="h3">${batch.title}</span></a><span class="pull-right">${batch.ABV}% ABV</span></div>
                     <div class="panel-body"><p class="margin-bottom-lg">${batch.style.name}</p>
                         <a href="deleteBatch?id=${batch.id}" class="btn btn-danger">Delete</a>
