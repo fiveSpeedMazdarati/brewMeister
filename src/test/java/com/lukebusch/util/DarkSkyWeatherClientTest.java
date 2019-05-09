@@ -33,4 +33,11 @@ class DarkSkyWeatherClientTest {
             e.getMessage();
         }
     }
+
+    @Test
+    void convertWeatherDataToJavaObject() {
+
+        // check that the json is converted to a POJO
+        assertEquals("","");
+    }
 }

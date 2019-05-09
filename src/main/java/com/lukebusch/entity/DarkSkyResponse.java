@@ -1,10 +1,17 @@
 package com.lukebusch.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class DarkSkyResponse {
+	@JsonProperty
 	private int offset;
+	@JsonProperty
 	private String timezone;
+	@JsonProperty
 	private double latitude;
+	@JsonProperty
 	private Daily daily;
+	@JsonProperty
 	private double longitude;
 
 	public void setOffset(int offset){

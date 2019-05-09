@@ -1,39 +1,75 @@
 package com.lukebusch.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class DataItem{
+	@JsonProperty
 	private int apparentTemperatureMinTime;
+	@JsonProperty
 	private double temperatureMax;
+	@JsonProperty
 	private String icon;
+	@JsonProperty
 	private int precipIntensityMax;
+	@JsonProperty
 	private int windBearing;
+	@JsonProperty
 	private int temperatureMaxTime;
+	@JsonProperty
 	private double apparentTemperatureMin;
+	@JsonProperty
 	private int sunsetTime;
+	@JsonProperty
 	private double temperatureLow;
+	@JsonProperty
 	private double humidity;
+	@JsonProperty
 	private double moonPhase;
+	@JsonProperty
 	private double windSpeed;
+	@JsonProperty
 	private int apparentTemperatureLowTime;
+	@JsonProperty
 	private int sunriseTime;
+	@JsonProperty
 	private double apparentTemperatureLow;
+	@JsonProperty
 	private String summary;
+	@JsonProperty
 	private int precipProbability;
+	@JsonProperty
 	private int temperatureHighTime;
+	@JsonProperty
 	private int visibility;
+	@JsonProperty
 	private int precipIntensity;
+	@JsonProperty
 	private double cloudCover;
+	@JsonProperty
 	private double temperatureMin;
+	@JsonProperty
 	private int apparentTemperatureHighTime;
+	@JsonProperty
 	private double pressure;
+	@JsonProperty
 	private double dewPoint;
+	@JsonProperty
 	private int temperatureMinTime;
+	@JsonProperty
 	private int uvIndexTime;
+	@JsonProperty
 	private double apparentTemperatureMax;
+	@JsonProperty
 	private double temperatureHigh;
+	@JsonProperty
 	private int temperatureLowTime;
+	@JsonProperty
 	private double apparentTemperatureHigh;
+	@JsonProperty
 	private int time;
+	@JsonProperty
 	private int uvIndex;
+	@JsonProperty
 	private int apparentTemperatureMaxTime;
 
 	public void setApparentTemperatureMinTime(int apparentTemperatureMinTime){

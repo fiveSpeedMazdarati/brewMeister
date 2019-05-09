@@ -1,6 +1,10 @@
 package com.lukebusch.controller;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lukebusch.entity.Batch;
+import com.lukebusch.entity.DarkSkyResponse;
 import com.lukebusch.persistence.GenericDao;
 import com.lukebusch.util.DaoFactory;
 import com.lukebusch.util.DarkSkyWeatherClient;
@@ -54,20 +58,22 @@ public class GetBatch extends HttpServlet {
         String latitudeFromZip = "47.643";
         String longitudeFromZip = "-89.924";
 
+        DarkSkyResponse darkSkyResponse;
 
         try {
 
-        String weather = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
-        req.setAttribute("weather", weather);
+            darkSkyResponse = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
 
-        // weather retrieval was successful, so put that in the request
-        req.setAttribute("weatherError", false);
+            // weather retrieval was successful, so put the weather in the request and set the weather error flag to false
+            req.setAttribute("weather", darkSkyResponse);
+            req.setAttribute("weatherError", false);
+
             //TODO: build second request for bottle date if time
 
         } catch (ResponseProcessingException e) {
             logger.error("Error getting weather data: " + e.getMessage());
 
-            // there was a weather retrieval error, put that in the request
+            // there was a weather retrieval error, set the weather error flag to true
             req.setAttribute("weatherError", true);
         }
 
@@ -90,7 +96,7 @@ public class GetBatch extends HttpServlet {
         return String.valueOf(unixTimestamp);
     }
 
-    private String getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
+    private DarkSkyResponse getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
 
         String weatherJson = "";
         DarkSkyWeatherClient client = new DarkSkyWeatherClient();
@@ -98,6 +104,19 @@ public class GetBatch extends HttpServlet {
         //TODO: replace the hard coded values with info from the user profile and batch date
         weatherJson = client.getWeatherData(latitude, longitude, convertToMillis(weatherDate));
 
-        return weatherJson;
+        ObjectMapper mapper = new ObjectMapper();
+        DarkSkyResponse weatherResponse= null;
+
+        try {
+            weatherResponse = mapper.readValue(weatherJson, DarkSkyResponse.class);
+
+        } catch (JsonParseException exception) {
+
+        } catch (JsonMappingException exception) {
+
+        } catch (IOException exception) {
+
+        }
+        return weatherResponse;
     }
 }
