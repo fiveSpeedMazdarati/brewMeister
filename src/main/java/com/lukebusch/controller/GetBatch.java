@@ -43,10 +43,13 @@ public class GetBatch extends HttpServlet {
 
         String id = req.getParameter("id");
         logger.info("param collected: " + id);
+
         GenericDao<Batch> dao = DaoFactory.createDao(Batch.class);
+
         Batch batch = dao.getById(Integer.valueOf(id));
         logger.debug("Retrieving batch #" + id);
         logger.debug(batch);
+
         req.setAttribute("batch", batch);
 
         //TODO: get the lat/lon for the user's ZIP code
