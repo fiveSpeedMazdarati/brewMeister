@@ -62,7 +62,7 @@ class UserDAOTest {
     @Test
     void saveOrUpdateSuccess() {
         // get a batch, change its value, save it back to the database
-        User userToModify = (User) genericDao.getById(2);
+        User userToModify = (User) genericDao.getById(1);
         String originalFirstName = userToModify.getFirstName();
         logger.debug("This user: " + userToModify.toString());
         logger.debug("User's original first name: " + originalFirstName);
@@ -71,7 +71,7 @@ class UserDAOTest {
         genericDao.saveOrUpdate(userToModify);
 
         // get the same user, verify that the first name field has changed
-        User modifiedUser = (User) genericDao.getById(2);
+        User modifiedUser = (User) genericDao.getById(1);
         logger.debug("first name from database: " + modifiedUser.getFirstName());
 
         assertNotEquals(originalFirstName, modifiedUser.getFirstName());
@@ -83,7 +83,7 @@ class UserDAOTest {
     @Test
     void insertSuccess() {
 
-        User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
+        User testUser = new User("tester", "password", "first name test", "last name test", "email@emailplace.com", "53589", LocalDate.of(1980, 6, 16));
 
         // grab the id of the newly added user, use it to verify the new user was created
         int newId = genericDao.insert(testUser);
@@ -100,7 +100,7 @@ class UserDAOTest {
     @Test
     void insertWithBatchSuccess() {
 
-        User testUser = new User("tester", "password", "first name test", "last name test", "53589", LocalDate.of(1980, 6, 16));
+        User testUser = new User("tester", "password", "first name test", "last name test", "email@emailplace.com", "53589", LocalDate.of(1980, 6, 16));
         Batch testBatch = new Batch("White Spotted Dog", "porter", LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), LocalDate.of(2019, 4, 1), 1.055, 1.043);
         // this way each of the entities know about one another!
         testUser.addBatch(testBatch);

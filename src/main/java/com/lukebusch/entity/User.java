@@ -30,6 +30,8 @@ public class User {
     private String lastName;
     @Column(name="zip_code")
     private String zipCode;
+    @Column(name="email")
+    private String email;
     @Column(name="birthdate")
     private LocalDate birthDate;
     @Column(name="role")
@@ -52,7 +54,7 @@ public class User {
      * @param zipCode   the zip code
      * @param birthDate the birth date
      */
-    public User(String userName, String password, String firstName, String lastName, String zipCode, LocalDate birthDate) {
+    public User(String userName, String password, String firstName, String lastName, String email, String zipCode, LocalDate birthDate) {
 
         this.userName = userName;
         this.password = password;
@@ -60,6 +62,7 @@ public class User {
         this.lastName = lastName;
         this.zipCode = zipCode;
         this.birthDate = birthDate;
+        this.email = email;
     }
 
     /**
@@ -98,6 +101,14 @@ public class User {
         this.userName = userName;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     /**
      * Gets first name.
      *
@@ -132,6 +143,14 @@ public class User {
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
