@@ -244,7 +244,7 @@ public class User {
 
     public void addRole(Role role) {
         roles.add(role);
-        role.setUser(this);
+        // role.setUser(this);
     }
 
     /**
@@ -254,7 +254,7 @@ public class User {
 
     public void removeRole(Role role) {
         roles.remove(role);
-        role.setUser(null);
+        // role.setUser(null);
     }
 
     /**

@@ -30,23 +30,17 @@ public class Role {
         this.user = user;
         this.roleName = roleName;
         this.userName = userName;
-    }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(int id) {
+        this.id = id;
     }
+
 
     public String getUserName() {
         return userName;

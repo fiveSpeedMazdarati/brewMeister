@@ -6,8 +6,13 @@ INSERT INTO user VALUES (1, "nelly-o", "password", "Neils", "Bohr", "neils@bohr.
 INSERT INTO user VALUES (2, "BigAl", "password", "Albert", "Einstein", "itWorks@relativity.com", "11223", "1879-03-14", 2);
 INSERT INTO user VALUES (3, "Brauny", "password", "Wernher", "von Braun", "wernher@rocketsciece.gov", "12233", "1912-03-23", 1);
 INSERT INTO user VALUES (4, "uncertain", "password", "Werner-Karl", "Heisenberg", "whereisit@uncertainty.net", "12334", "1901-12-05", 3);
-INSERT INTO batch VALUES (1, "batch title", "recipe name", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, 2, 1), (2, "Christmas 2018", "Begian Dubbel", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, 1, 2), (3, "Summer 2018", "Golden Lager", "2018-03-01", "2018-03-06", "2018-04-20", "2018-10-20", 1.105, 1.055, 2, 1);
+INSERT INTO batch VALUES (1, "batch title", "recipe name", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, "I really don't have much to say about this one.", 2, 1), (2, "Christmas 2018", "Begian Dubbel", "2019-03-01", "2019-03-06", "2019-04-20", "2019-10-20", 1.105, 1.055, "Pretty tasty! I can't believe that this worked out as well as it did.<br />Dropping that dog hair in there actually made the beer <em>better!</em>", 1, 2), (3, "Summer 2018", "Golden Lager", "2018-03-01", "2018-03-06", "2018-04-20", "2018-10-20", 1.105, 1.055, "Not my best work, unfortunately.", 2, 1);
 DELETE FROM style;
 ALTER TABLE style AUTO_INCREMENT  = 1;
 INSERT INTO style VALUES (1, "Golden Lager", "A full-bodied golden colored crisp, fizzy beer. Generally has slight to medium bitterness and a light mouthfeel. Serve cold.");
 INSERT INTO style VALUES (2, "Imperial Stout", "A dark nearly black or completely black colored beer with little carbonation. Ranges from low ABV to very high depending on style.");
+DELETE FROM role;
+ALTER TABLE role AUTO_INCREMENT = 1;
+INSERT INTO role VALUES (1, "administrator", "Brauny", 3);
+INSERT INTO role VALUES (2, "registered_user", "uncertain", 4);
+INSERT INTO role VALUES (3, "administrator", "BigAl", 2);
