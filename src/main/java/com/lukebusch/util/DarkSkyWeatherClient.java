@@ -1,18 +1,58 @@
 package com.lukebusch.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-
+import java.util.Properties;
+/**
+ * A client to access the Dark Sky weather API
+ * https://darksky.net/dev
+ *
+ * @author lbusch
+ */
 public class DarkSkyWeatherClient {
 
-    public String getWeatherData() throws Exception {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
+    private PropertiesLoader loader;
+    private Properties properties;
+    private String uri;
+    private String apiKey;
+    private String excludeParams;
+
+    /**
+     * Zero parameter constructor
+     */
+    public DarkSkyWeatherClient() {
+
+        loader = new PropertiesLoader();
+        properties = loader.loadWebserviceProperties();
+
+        uri = properties.getProperty("darksky.uri");
+        apiKey = properties.getProperty("darksky.api.key");
+        excludeParams = properties.getProperty("darksky.param.exclude");
+
+    }
+
+    /**
+     * @param latitude the latitude for the location expressed as a String. Positive numbers for North, negative for South e.g. -79.342
+     * @param longitude the longitude for the location expressed as a String. Positive numbers for East, negative for West e.g. 56.224
+     * @param time the date and time to retrieve expressed as a Unix timestamp
+     * @return a string containing the weather information in JSON format
+     * @throws Exception in case there is an error contacting the web service
+     */
+    public String getWeatherData(String latitude, String longitude, String time) throws Exception {
+        String response;
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("https://api.darksky.net/forecast/6994d6b06e66e1182c61e65746e771ad/42.926,-89.224,329979600?exclude=currently,flags,hourly,flags");
+        WebTarget target = client.target(uri + apiKey + "/" + latitude + "," + longitude + "," + time + excludeParams);
 
-        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        logger.debug(target);
+
+        response = target.request(MediaType.APPLICATION_JSON).get(String.class);
 
         return response;
     }
