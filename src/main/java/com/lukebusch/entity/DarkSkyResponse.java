@@ -2,16 +2,19 @@ package com.lukebusch.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.annotation.Generated;
+
+@Generated("com.robohorse.robopojogenerator")
 public class DarkSkyResponse {
-	@JsonProperty
+	@JsonProperty("offset")
 	private int offset;
-	@JsonProperty
+	@JsonProperty("timezone")
 	private String timezone;
-	@JsonProperty
+	@JsonProperty("latitude")
 	private double latitude;
-	@JsonProperty
+	@JsonProperty("daily")
 	private Daily daily;
-	@JsonProperty
+	@JsonProperty("longitude")
 	private double longitude;
 
 	public void setOffset(int offset){

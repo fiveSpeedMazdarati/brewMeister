@@ -1,5 +1,8 @@
-package com.lukebusch.util;
+package com.lukebusch.persistence;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lukebusch.entity.DarkSkyResponse;
+import com.lukebusch.persistence.DarkSkyWeatherClient;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,16 +31,16 @@ class DarkSkyWeatherClientTest {
                                     + "apparentTemperatureMax\":69.99,\"apparentTemperatureMaxTime\":330044400}]},\""
                                     + "offset\":-5}"
                                     ,  client.getWeatherData("42.926", "-89.224", "329979600"));
+
+            ObjectMapper mapper = new ObjectMapper();
+            DarkSkyResponse response = mapper.readValue(client.getWeatherData("42.926", "42.926", "329979600"), DarkSkyResponse.class);
+
+            response.getDaily().getData();
+
         } catch (Exception e) {
 
             e.getMessage();
         }
     }
 
-    @Test
-    void convertWeatherDataToJavaObject() {
-
-        // check that the json is converted to a POJO
-        assertEquals("","");
-    }
 }

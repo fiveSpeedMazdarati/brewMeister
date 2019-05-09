@@ -7,7 +7,7 @@ import com.lukebusch.entity.Batch;
 import com.lukebusch.entity.DarkSkyResponse;
 import com.lukebusch.persistence.GenericDao;
 import com.lukebusch.util.DaoFactory;
-import com.lukebusch.util.DarkSkyWeatherClient;
+import com.lukebusch.persistence.DarkSkyWeatherClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,14 +58,14 @@ public class GetBatch extends HttpServlet {
         String latitudeFromZip = "47.643";
         String longitudeFromZip = "-89.924";
 
-        DarkSkyResponse darkSkyResponse;
+        String weatherResponse;
 
         try {
 
-            darkSkyResponse = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
+            weatherResponse = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
 
             // weather retrieval was successful, so put the weather in the request and set the weather error flag to false
-            req.setAttribute("weather", darkSkyResponse);
+            req.setAttribute("weather", weatherResponse);
             req.setAttribute("weatherError", false);
 
             //TODO: build second request for bottle date if time
@@ -96,7 +96,7 @@ public class GetBatch extends HttpServlet {
         return String.valueOf(unixTimestamp);
     }
 
-    private DarkSkyResponse getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
+    private String getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
 
         String weatherJson = "";
         DarkSkyWeatherClient client = new DarkSkyWeatherClient();
@@ -117,6 +117,6 @@ public class GetBatch extends HttpServlet {
         } catch (IOException exception) {
 
         }
-        return weatherResponse;
+        return weatherJson;
     }
 }

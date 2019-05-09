@@ -2,74 +2,77 @@ package com.lukebusch.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.annotation.Generated;
+
+@Generated("com.robohorse.robopojogenerator")
 public class DataItem{
-	@JsonProperty
+	@JsonProperty("apparentTemperatureMinTime")
 	private int apparentTemperatureMinTime;
-	@JsonProperty
+	@JsonProperty("temperatureMax")
 	private double temperatureMax;
-	@JsonProperty
+	@JsonProperty("icon")
 	private String icon;
-	@JsonProperty
+	@JsonProperty("precipIntensityMax")
 	private int precipIntensityMax;
-	@JsonProperty
+	@JsonProperty("windBearing")
 	private int windBearing;
-	@JsonProperty
+	@JsonProperty("temperatureMaxTime")
 	private int temperatureMaxTime;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureMin")
 	private double apparentTemperatureMin;
-	@JsonProperty
+	@JsonProperty("sunsetTime")
 	private int sunsetTime;
-	@JsonProperty
+	@JsonProperty("temperatureLow")
 	private double temperatureLow;
-	@JsonProperty
+	@JsonProperty("humidity")
 	private double humidity;
-	@JsonProperty
+	@JsonProperty("moonPhase")
 	private double moonPhase;
-	@JsonProperty
+	@JsonProperty("windSpeed")
 	private double windSpeed;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureLowTime")
 	private int apparentTemperatureLowTime;
-	@JsonProperty
+	@JsonProperty("sunriseTime")
 	private int sunriseTime;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureLow")
 	private double apparentTemperatureLow;
-	@JsonProperty
+	@JsonProperty("summary")
 	private String summary;
-	@JsonProperty
+	@JsonProperty("precipProbability")
 	private int precipProbability;
-	@JsonProperty
+	@JsonProperty("temperatureHighTime")
 	private int temperatureHighTime;
-	@JsonProperty
+	@JsonProperty("visibility")
 	private int visibility;
-	@JsonProperty
+	@JsonProperty("precipIntensity")
 	private int precipIntensity;
-	@JsonProperty
+	@JsonProperty("cloudCover")
 	private double cloudCover;
-	@JsonProperty
+	@JsonProperty("temperatureMin")
 	private double temperatureMin;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureHighTime")
 	private int apparentTemperatureHighTime;
-	@JsonProperty
+	@JsonProperty("pressure")
 	private double pressure;
-	@JsonProperty
+	@JsonProperty("dewPoint")
 	private double dewPoint;
-	@JsonProperty
+	@JsonProperty("temperatureMinTime")
 	private int temperatureMinTime;
-	@JsonProperty
+	@JsonProperty("uvIndexTime")
 	private int uvIndexTime;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureMax")
 	private double apparentTemperatureMax;
-	@JsonProperty
+	@JsonProperty("temperatureHigh")
 	private double temperatureHigh;
-	@JsonProperty
+	@JsonProperty("temperatureLowTime")
 	private int temperatureLowTime;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureHigh")
 	private double apparentTemperatureHigh;
-	@JsonProperty
+	@JsonProperty("time")
 	private int time;
-	@JsonProperty
+	@JsonProperty("uvIndex")
 	private int uvIndex;
-	@JsonProperty
+	@JsonProperty("apparentTemperatureMaxTime")
 	private int apparentTemperatureMaxTime;
 
 	public void setApparentTemperatureMinTime(int apparentTemperatureMinTime){
