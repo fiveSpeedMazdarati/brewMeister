@@ -3,7 +3,7 @@ package com.lukebusch.controller;
 import com.lukebusch.entity.Batch;
 import com.lukebusch.persistence.GenericDao;
 import com.lukebusch.util.DaoFactory;
-import com.lukebusch.util.PropertiesLoader;
+import com.lukebusch.util.DarkSkyWeatherClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.client.ResponseProcessingException;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 @WebServlet (name="GetBatch"
             , urlPatterns = { "/getBatch" }
@@ -35,6 +38,7 @@ public class GetBatch extends HttpServlet {
         this.doGet(req, resp);
     }
 
+    @SuppressWarnings("unchecked")
     private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String id = req.getParameter("id");
@@ -45,12 +49,55 @@ public class GetBatch extends HttpServlet {
         logger.debug(batch);
         req.setAttribute("batch", batch);
 
-        //TODO: get the weather data here, put it into the request
-        //TODO: this should probably go into the API client class, not here
-        PropertiesLoader propertiesLoader = new PropertiesLoader();
-        propertiesLoader.loadWebserviceProperties();
+        //TODO: get the lat/lon for the user's ZIP code
+        // some hard coded values for now
+        String latitudeFromZip = "47.643";
+        String longitudeFromZip = "-89.924";
+
+
+        try {
+
+        String weather = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
+        req.setAttribute("weather", weather);
+
+        // weather retrieval was successful, so put that in the request
+        req.setAttribute("weatherError", false);
+            //TODO: build second request for bottle date if time
+
+        } catch (ResponseProcessingException e) {
+            logger.error("Error getting weather data: " + e.getMessage());
+
+            // there was a weather retrieval error, put that in the request
+            req.setAttribute("weatherError", true);
+        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("viewBatch.jsp");
         dispatcher.forward(req, resp);
+    }
+
+    /**
+     * Helper method to convert a LocalDate to its Unix timestamp
+     * @param date the date to convert
+     * @return the Unix timestamp as a String
+     */
+    private String convertToMillis(LocalDate date){
+
+        ZoneId zoneId = ZoneId.systemDefault();
+        long unixTimestamp = date.atStartOfDay(zoneId).toEpochSecond();
+
+        logger.debug("unix time: " + unixTimestamp);
+
+        return String.valueOf(unixTimestamp);
+    }
+
+    private String getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
+
+        String weatherJson = "";
+        DarkSkyWeatherClient client = new DarkSkyWeatherClient();
+
+        //TODO: replace the hard coded values with info from the user profile and batch date
+        weatherJson = client.getWeatherData(latitude, longitude, convertToMillis(weatherDate));
+
+        return weatherJson;
     }
 }

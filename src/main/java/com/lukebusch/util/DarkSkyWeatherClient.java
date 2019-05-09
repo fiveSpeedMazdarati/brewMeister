@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.ResponseProcessingException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.Properties;
@@ -44,7 +45,7 @@ public class DarkSkyWeatherClient {
      * @return a string containing the weather information in JSON format
      * @throws Exception in case there is an error contacting the web service
      */
-    public String getWeatherData(String latitude, String longitude, String time) throws Exception {
+    public String getWeatherData(String latitude, String longitude, String time) throws ResponseProcessingException {
         String response;
 
         Client client = ClientBuilder.newClient();

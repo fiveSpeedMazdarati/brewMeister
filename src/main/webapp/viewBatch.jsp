@@ -15,6 +15,7 @@
               Brew Date: ${batch.brewDate}<br />
               ABV: ${batch.ABV}%<br />
         <a href="editBatch?id=${batch.id}" class="btn btn-default">Edit this batch</a>
+          <div><p>${weather}</p></div>
       </div>
     </div>
   </div>
