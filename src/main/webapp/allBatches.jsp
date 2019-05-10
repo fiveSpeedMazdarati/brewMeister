@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="container">
+        <%@include file="topnav.jsp"%>
         <c:if test="${batchUpdated==true}">
           <div class="alert alert-success" role="alert">${updatedBatchTitle} (Batch #${updatedBatchId}) updated successfully.</div>
         </c:if>

@@ -2,5 +2,14 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
+    max-width: 80%;
+}
+
+.container {
+    background-color: aliceblue;
+}
+
+body {
+    /* official light blue color of bavaria*/
+    background-color: #0099D5;
 }

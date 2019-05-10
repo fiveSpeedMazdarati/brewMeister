@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="container">
+  <%@include file="topnav.jsp"%>
   <div class="row">
     <form>
       <div class="col-md-6 col-xs-12">

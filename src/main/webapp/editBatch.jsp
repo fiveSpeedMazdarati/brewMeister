@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="container">
+    <%@include file="topnav.jsp"%>
         <div class="row ">
             <form>
                 <div class="col-xs-12 col-md-6">
@@ -28,7 +29,7 @@
                   <div class="form-group">
                     <label for="abv">ABV</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" id="abv" aria-label="Amount (to the nearest dollar)" value="${batch.ABV}">
+                      <input type="text" class="form-control" id="abv" aria-label="Percent alcohol by volume" value="${batch.ABV}">
                       <span class="input-group-addon">%</span>
                     </div>
                   </div>

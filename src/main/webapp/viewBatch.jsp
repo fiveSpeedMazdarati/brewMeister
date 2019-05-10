@@ -7,6 +7,7 @@
 </head>
 <body>
 <div class="container">
+  <%@include file="topnav.jsp"%>
   <div class="row ">
     <div class="panel panel-default">
       <div class = "panel-header">ID: ${batch.id}</div>

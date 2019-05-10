@@ -7,12 +7,12 @@
 </head>
 <body>
 <div class="container">
-<h2>Brewmeister</h2>
-    <div class="panel panel-default center-block">
-    <p>You've found BREWMEISTER!</p>
+<h2 class="text-center">Brewmeister</h2>
+    <div class="panel panel-default center-block text-center">
+    <p class="h3">You've found BREWMEISTER!</p>
       <div>
         <a href="getAllBatchesForUser"><span class="btn">Login</span></a>
-        <span class="btn"><a href="signUp.jsp">Sign Up</a></span>
+        <span class="btn"><a href="showCreateNewUser">Sign Up</a></span>
       </div>
     </div>
 </div>

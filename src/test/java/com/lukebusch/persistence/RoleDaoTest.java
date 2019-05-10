@@ -46,10 +46,4 @@ class RoleDaoTest {
 
         assertEquals(4, newId);
     }
-
-    @Test
-    void getByProperty() {
-
-
-    }
 }
