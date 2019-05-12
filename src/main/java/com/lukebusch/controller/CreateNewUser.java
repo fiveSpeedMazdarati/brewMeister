@@ -48,11 +48,13 @@ public class CreateNewUser extends HttpServlet {
             , LocalDate.parse(request.getParameter("birthdate"))
         );
 
+        //TODO: parameterize the default role name
         Role role = new Role(newUser, "administrator", request.getParameter("username"));
         Set<Role> roles = new HashSet<>();
         roles.add(role);
         newUser.setRoles(roles);
 
+        // TODO: check if the username or email already exists in the database
         // logger.info(dao.getByProperty("email"));
 
         int newUserId = dao.insert(newUser);

@@ -17,7 +17,7 @@ public class Logout extends HttpServlet {
         HttpSession session = req.getSession(false);
 
         if (session != null) {
-            // Bye!
+            // Bye, Felicia
             session.invalidate();
         }
 
