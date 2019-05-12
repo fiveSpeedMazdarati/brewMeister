@@ -1,4 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<nav>
-    <a href="logout">Log out!</a>
+<nav class="navbar navbar-default">
+    <div class="navbar-collapse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <p class="h2">Brewmeister</p>
+            </a>
+        </div>
+      <ul class="nav navbar-nav">
+        <li><a href="showCreateNewBatch">New Batch</a></li>
+        <li><a href="getAllBatchesForUser">All Batches</a></li>
+        <li><a href="logout">Log Out</a></li>
+      </ul>
+    </div>
 </nav>

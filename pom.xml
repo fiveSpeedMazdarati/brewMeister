@@ -88,7 +88,7 @@
 
     </dependencies>
     <build>
-        <finalName>week-4-hibernate-exercise</finalName>
+        <finalName>brewmeister</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

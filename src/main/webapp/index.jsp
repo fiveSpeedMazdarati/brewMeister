@@ -3,11 +3,12 @@
 <html>
 <head>
     <%@ include file="bootstrap-header.jsp" %>
-    <title>Brewmeister - Track your home brews!</title>
+    <link rel="stylesheet" href="brewmeister.css" type="text/css">
+    <title>Brewmeister | Track your home brews!</title>
 </head>
 <body>
 <div class="container">
-<h2 class="text-center">Brewmeister</h2>
+<h2 class="text-center"><img id="main-img" src="beerGlasses.png"></h2>
     <div class="panel panel-default center-block text-center">
     <p class="h3">You've found BREWMEISTER!</p>
       <div>

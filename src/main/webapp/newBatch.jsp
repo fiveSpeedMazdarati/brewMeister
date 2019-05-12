@@ -2,6 +2,7 @@
 <html>
 <head>
     <%@ include file="bootstrap-header.jsp"%>
+    <link rel="stylesheet" href="brewmeister.css" type="text/css">
     <title>New Batch | Brewmeister</title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=pxx223jnojpv1eswnsldybzgdsk1xk3pbq3halc5d2hqm5d9"></script>
     <script>tinymce.init({selector:"#tinymce"});</script>
@@ -14,7 +15,7 @@
       <div class="col-md-6 col-xs-12">
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="Batch Name">
+          <input type="text" class="form-control" id="title" name="title" placeholder="Batch Name" required>
         </div>
         <div class="form-group">
           <label for="style">Style</label>
@@ -34,14 +35,16 @@
       <div class="col-md-6 col-xs-12">
         <div class="form-group">
           <label for="brew-date">Brew Date</label>
-          <input type="date" class="form-control" id="brew-date" name="brew-date" placeholder="Batch Name">
+          <input type="date" class="form-control" id="brew-date" name="brew-date" placeholder="Batch Name" required>
         </div>
         <div class="form-group">
           <label for="bottle-date">Projected Bottle Date</label>
-          <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name">
+          <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name" required>
         </div>
       </div>
+    <div class="row">
       <input type="submit" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="application/x-www-form-urlencoded">
+    </div>
     </form>
   </div>
 </div>

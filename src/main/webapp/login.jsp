@@ -3,11 +3,13 @@
 <html>
 <head>
     <%@include file="bootstrap-header.jsp"%>
+    <link rel="stylesheet" href="brewmeister.css" type="text/css">
     <title>Log In To Use Brewmeister</title>
 </head>
 <body>
 <div class="container">
-    <div class="row justify-content-md-center center-block">
+    <div class="row">
+        <div class="col-md-6 col-centered">
         <form action="j_security_check" method="POST">
             <div class="form-group">
               <label for="j_username">Username:</label>
@@ -19,6 +21,7 @@
             </div>
             <input class="btn btn-submit" type="submit" value="Log In">
         </form>
+        </div>
     </div>
 </div>
 </body>

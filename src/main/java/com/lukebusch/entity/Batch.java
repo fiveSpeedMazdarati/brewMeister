@@ -29,7 +29,7 @@ public class Batch {
     @Column(name="expiration_date")
     private LocalDate expirationDate;
     @Column(name="initial_specific_gravity")
-    private double initalSpecificGravity;
+    private double initialSpecificGravity;
     @Column(name="final_specific_gravity")
     private double finalSpecificGravity;
     private String notes;
@@ -52,10 +52,10 @@ public class Batch {
      * @param bottleDate            the bottle date
      * @param readyDate             the ready date
      * @param expirationDate        the expiration date
-     * @param initalSpecificGravity the inital specific gravity
+     * @param initialSpecificGravity the initial specific gravity
      * @param finalSpecificGravity  the final specific gravity
      */
-    public Batch(String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initalSpecificGravity, double finalSpecificGravity) {
+    public Batch(String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initialSpecificGravity, double finalSpecificGravity) {
 
         this.title = title;
         this.recipe = recipe;
@@ -63,7 +63,7 @@ public class Batch {
         this.bottleDate = bottleDate;
         this.readyDate = readyDate;
         this.expirationDate = expirationDate;
-        this.initalSpecificGravity = initalSpecificGravity;
+        this.initialSpecificGravity = initialSpecificGravity;
         this.finalSpecificGravity = finalSpecificGravity;
     }
 
@@ -74,11 +74,11 @@ public class Batch {
      */
     public double getABV() {
         // make sure both specific gravity values are present, otherwise do not try to compute the value
-        if (initalSpecificGravity != 0 && finalSpecificGravity != 0) {
+        if (initialSpecificGravity != 0 && finalSpecificGravity != 0) {
 
             Double formattedDouble = 0.0;
             DecimalFormat formatter = new DecimalFormat("#.##");
-            formattedDouble = Double.valueOf(formatter.format(((initalSpecificGravity - finalSpecificGravity) * 131.25)));
+            formattedDouble = Double.valueOf(formatter.format(((initialSpecificGravity - finalSpecificGravity) * 131.25)));
             return formattedDouble;
         }
 
@@ -216,17 +216,17 @@ public class Batch {
      *
      * @return the inital specific gravity
      */
-    public double getInitalSpecificGravity() {
-        return initalSpecificGravity;
+    public double getInitialSpecificGravity() {
+        return initialSpecificGravity;
     }
 
     /**
      * Sets inital specific gravity.
      *
-     * @param initalSpecificGravity the inital specific gravity
+     * @param initialSpecificGravity the inital specific gravity
      */
-    public void setInitalSpecificGravity(double initalSpecificGravity) {
-        this.initalSpecificGravity = initalSpecificGravity;
+    public void setInitialSpecificGravity(double initialSpecificGravity) {
+        this.initialSpecificGravity = initialSpecificGravity;
     }
 
     /**
@@ -309,7 +309,7 @@ public class Batch {
                 ", bottleDate=" + bottleDate +
                 ", readyDate=" + readyDate +
                 ", expirationDate=" + expirationDate +
-                ", initalSpecificGravity=" + initalSpecificGravity +
+                ", initalSpecificGravity=" + initialSpecificGravity +
                 ", finalSpecificGravity=" + finalSpecificGravity +
                 ", notes=" + notes +
                 ", user=" + user +
@@ -323,7 +323,7 @@ public class Batch {
         if (o == null || getClass() != o.getClass()) return false;
         Batch batch = (Batch) o;
         return id == batch.id &&
-                Double.compare(batch.initalSpecificGravity, initalSpecificGravity) == 0 &&
+                Double.compare(batch.initialSpecificGravity, initialSpecificGravity) == 0 &&
                 Double.compare(batch.finalSpecificGravity, finalSpecificGravity) == 0 &&
                 Objects.equals(title, batch.title) &&
                 Objects.equals(recipe, batch.recipe) &&
@@ -335,6 +335,6 @@ public class Batch {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, recipe, brewDate, bottleDate, readyDate, expirationDate, initalSpecificGravity, finalSpecificGravity);
+        return Objects.hash(id, title, recipe, brewDate, bottleDate, readyDate, expirationDate, initialSpecificGravity, finalSpecificGravity);
     }
 }

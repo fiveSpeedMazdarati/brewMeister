@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="week-4-hibernate-exercise.war">
+    <root id="archive" name="brewmeister.war">
       <element id="artifact" artifact-name="brewMeister:war exploded" />
     </root>
   </artifact>

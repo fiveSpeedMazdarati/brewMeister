@@ -3,6 +3,7 @@
 <html>
 <head>
     <%@include file="bootstrap-header.jsp"%>
+    <link rel="stylesheet" href="brewmeister.css" type="text/css">
     <title>View a Batch</title>
 </head>
 <body>

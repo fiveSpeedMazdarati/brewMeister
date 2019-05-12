@@ -13,3 +13,7 @@ body {
     /* official light blue color of bavaria*/
     background-color: #0099D5;
 }
+
+.panel {
+    padding: 0px;
+}
