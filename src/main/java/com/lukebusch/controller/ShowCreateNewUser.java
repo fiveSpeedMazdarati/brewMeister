@@ -34,7 +34,7 @@ public class ShowCreateNewUser extends HttpServlet {
 
         // send them off to the new user page
         RequestDispatcher dispatcher = req.getRequestDispatcher("signUp.jsp");
-        dispatcher.forward(req, resp);
+        dispatcher.include(req, resp);
 
     }
 }

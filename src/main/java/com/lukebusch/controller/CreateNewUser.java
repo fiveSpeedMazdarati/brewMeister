@@ -3,6 +3,7 @@ package com.lukebusch.controller;
 import com.lukebusch.entity.Role;
 import com.lukebusch.entity.User;
 import com.lukebusch.persistence.GenericDao;
+import com.lukebusch.persistence.SessionFactoryProvider;
 import com.lukebusch.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,6 +37,7 @@ public class CreateNewUser extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         GenericDao dao = DaoFactory.createDao( User.class );
 
         User newUser = new User(
@@ -54,17 +56,63 @@ public class CreateNewUser extends HttpServlet {
         roles.add(role);
         newUser.setRoles(roles);
 
-        // TODO: check if the username or email already exists in the database
-        // logger.info(dao.getByProperty("email"));
+        // a check to see if the username and email address are not already in use
+        if (userNameAvailable(request.getParameter("username")) && emailAddressAvailable(request.getParameter("email"))) {
 
-        int newUserId = dao.insert(newUser);
+            // create the new user and put the information into the request and session
+            int newUserId = dao.insert(newUser);
 
-        HttpSession session = request.getSession();
-        request.setAttribute("newUserId", newUserId);
-        request.setAttribute("username", newUser.getUserName());
+            request.setAttribute("newUserId", newUserId);
+            request.setAttribute("username", newUser.getUserName());
+            session.setAttribute("loggedInUser", newUser.getUserName());
+            session.setAttribute("loggedInUserId", newUserId);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            // forward them on to the all batches screen (which should be empty at this point)
+            routeUserToPage("getAllBatchesForUser", request, response);
+
+        } else {
+            // one of the username or email was in use, so go back to the sign up page and show an error
+            request.setAttribute("emailInUseError", true);
+            request.setAttribute("usernameInUseError", true);
+
+            // send them off to the signup page again
+            routeUserToPage("/signUp.jsp", request, response);
+        }
+
+    }
+
+    /**
+     * checks to see if a username is available for use (i.e. not in the user table already)
+     * @param username the username to look for
+     * @return whether the username is available
+     */
+    protected boolean userNameAvailable(String username) {
+        GenericDao dao = DaoFactory.createDao(User.class);
+
+        List<User> users = dao.findByPropertyEqual("userName", username );
+
+        return (users.size() == 0);
+
+    }
+
+    /**
+     * Checks to see if an email address is available for use (i.e. not in the user table already)
+     * @param email the email address to look for
+     * @return whether the email address is available
+     */
+    protected boolean emailAddressAvailable(String email) {
+
+        GenericDao dao = DaoFactory.createDao(User.class);
+        List<User> users = dao.findByPropertyEqual("email", email);
+
+        return (users.size() == 0);
+    }
+
+    /**
+     * sends the user to the proper page after signup success or failure
+     */
+    private void routeUserToPage(String url, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.include(request, response);
-
     }
 }
