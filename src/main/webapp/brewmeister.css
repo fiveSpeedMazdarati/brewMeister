@@ -17,3 +17,8 @@ body {
 .panel {
     padding: 0px;
 }
+
+.responsive-image {
+   max-width: 45%;
+   height: auto;
+}

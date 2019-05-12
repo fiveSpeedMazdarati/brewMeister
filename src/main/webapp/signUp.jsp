@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="bootstrap-header.jsp"%>
-    <link rel="stylesheet" href="brewmeister.css" type="text/css">
+    <link rel="stylesheet" href="brewmeister.css" type="text/css" />
     <title>Sign Up | Brewmeister</title>
 </head>
 <body>

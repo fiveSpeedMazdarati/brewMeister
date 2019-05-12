@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="bootstrap-header.jsp"%>
-    <link rel="stylesheet" href="brewmeister.css" type="text/css">
+    <link rel="stylesheet" href="brewmeister.css" type="text/css" />
     <title>Edit A Batch | Brewmeister</title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=pxx223jnojpv1eswnsldybzgdsk1xk3pbq3halc5d2hqm5d9"></script>
     <script>tinymce.init({selector:"#tinymce"});</script>
