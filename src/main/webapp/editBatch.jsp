@@ -20,11 +20,11 @@
                   </div>
                   <div class="form-group">
                     <label for="initial-specific-gravity">Initial Specific Gravity</label>
-                    <input type="text" id="initial-specific-gravity" value="${batch.title}" name="title"><br />
+                    <input type="text" id="initial-specific-gravity" value="${batch.initialSpecificGravity}" name="title"><br />
                   </div>
                   <div class="form-group">
                     <label for="final-specific-gravity">Final Specific Gravity</label>
-                    <input type="text" id="final-specific-gravity" value="${batch.title}" name="title"><br />
+                    <input type="text" id="final-specific-gravity" value="${batch.finalSpecificGravity}" name="title"><br />
                   </div>
                   <div class="form-group">
                     <label for="abv">ABV</label>

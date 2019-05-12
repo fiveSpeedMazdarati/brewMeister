@@ -171,6 +171,15 @@ class UserDAOTest {
             assertNotNull(testBatch);
         }
     }
+    /**
+     * Tests the get by property feature
+     */
+    @Test
+    void getByPropertySuccess() {
+        List<User> users = genericDao.findByPropertyEqual("userName", "BigAl");
+        // should only find one entry with the username "BigAl"
+        assertEquals(users.size(), 1);
+    }
 
     /**
      * tests getAll feature of DAO

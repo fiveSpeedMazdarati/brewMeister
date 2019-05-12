@@ -22,21 +22,26 @@ public class GetAllBatchesForUser extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    private GenericDao<User> userDao = DaoFactory.createDao( User.class );
+    private GenericDao<Batch> batchDao = DaoFactory.createDao(Batch.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String loggedInUser = req.getRemoteUser();
         logger.info("Username " +loggedInUser + " successfully authenticated.");
-        //a dao to get batches
-        GenericDao<Batch> batchDao = DaoFactory.createDao(Batch.class);
-        List<Batch> batches = batchDao.getAll();
-        logger.debug("Getting all batches from the db");
+
+        //TODO: refactor to getIdFromUserName()
+        List<User> user = userDao.findByPropertyEqual("userName", loggedInUser);
+        int userId = user.get(0).getId();
+
+        //TODO: refactor to getBatchesByUserId()
+        List<Batch> batches = batchDao.findByPropertyEqual("id", userId);
+        logger.info("Getting all batches from the db for user #" + userId);
         logger.debug(batches);
 
-        //another dao to get the user information
-        GenericDao<User> userDao = DaoFactory.createDao( User.class );
-
         req.setAttribute("loggedInUserName", loggedInUser);
+        req.setAttribute("loggedInUserId", userId);
         req.setAttribute("batches", batches);
 
         // pass along the info from the update batch servlet (will be empty if the program did not come here from the UpdateBatch servlet
@@ -45,7 +50,7 @@ public class GetAllBatchesForUser extends HttpServlet {
         req.setAttribute("UpdatedBatchId", req.getAttribute("updatedBatchId"));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allBatches.jsp");
-        dispatcher.forward(req, resp);
+        dispatcher.include(req, resp);
 
     }
     @Override
