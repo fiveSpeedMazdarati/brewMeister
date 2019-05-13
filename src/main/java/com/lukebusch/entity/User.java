@@ -40,17 +40,21 @@ public class User {
     private Set<Batch> batches = new HashSet<>();
     @OneToMany(mappedBy = "roleName", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
+
     /**
      * Instantiates a new User.
      */
     public User() {
     }
+
     /**
      * Instantiates a new User
      *
      * @param userName  the user name
+     * @param password  the password
      * @param firstName the first name
      * @param lastName  the last name
+     * @param email     the email
      * @param zipCode   the zip code
      * @param birthDate the birth date
      */
@@ -101,10 +105,20 @@ public class User {
         this.userName = userName;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
@@ -145,10 +159,20 @@ public class User {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
@@ -201,18 +225,18 @@ public class User {
 
     /**
      * Gets the user's roles
+     *
      * @return the roles
      */
-
     public Set<Role> getRoles() {
         return roles;
     }
 
     /**
      * Sets the user's roles
+     *
      * @param roles the roles
      */
-
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
@@ -239,9 +263,9 @@ public class User {
 
     /**
      * Add a role to the current user
+     *
      * @param role the role to add
      */
-
     public void addRole(Role role) {
         roles.add(role);
         // role.setUser(this);
@@ -249,9 +273,9 @@ public class User {
 
     /**
      * Remove a role from the current user
+     *
      * @param role the role to remove
      */
-
     public void removeRole(Role role) {
         roles.remove(role);
         // role.setUser(null);

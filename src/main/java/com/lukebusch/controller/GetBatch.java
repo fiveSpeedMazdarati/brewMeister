@@ -24,6 +24,9 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Get batch.
+ */
 @WebServlet (name="GetBatch"
             , urlPatterns = { "/getBatch" }
             )

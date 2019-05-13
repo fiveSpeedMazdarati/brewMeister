@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Get all batches for user.
+ */
 @WebServlet(name = "GetAllBatchesForUser"
                 , urlPatterns = "/getAllBatchesForUser")
 public class GetAllBatchesForUser extends HttpServlet {

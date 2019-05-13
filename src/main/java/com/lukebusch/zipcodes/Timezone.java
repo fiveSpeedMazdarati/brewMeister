@@ -3,6 +3,9 @@ package com.lukebusch.zipcodes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Timezone.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Timezone{
 
@@ -18,35 +21,75 @@ public class Timezone{
 	@JsonProperty("is_dst")
 	private String isDst;
 
-	public void setTimezoneIdentifier(String timezoneIdentifier){
+    /**
+     * Set timezone identifier.
+     *
+     * @param timezoneIdentifier the timezone identifier
+     */
+    public void setTimezoneIdentifier(String timezoneIdentifier){
 		this.timezoneIdentifier = timezoneIdentifier;
 	}
 
-	public String getTimezoneIdentifier(){
+    /**
+     * Get timezone identifier string.
+     *
+     * @return the string
+     */
+    public String getTimezoneIdentifier(){
 		return timezoneIdentifier;
 	}
 
-	public void setTimezoneAbbr(String timezoneAbbr){
+    /**
+     * Set timezone abbr.
+     *
+     * @param timezoneAbbr the timezone abbr
+     */
+    public void setTimezoneAbbr(String timezoneAbbr){
 		this.timezoneAbbr = timezoneAbbr;
 	}
 
-	public String getTimezoneAbbr(){
+    /**
+     * Get timezone abbr string.
+     *
+     * @return the string
+     */
+    public String getTimezoneAbbr(){
 		return timezoneAbbr;
 	}
 
-	public void setUtcOffsetSec(int utcOffsetSec){
+    /**
+     * Set utc offset sec.
+     *
+     * @param utcOffsetSec the utc offset sec
+     */
+    public void setUtcOffsetSec(int utcOffsetSec){
 		this.utcOffsetSec = utcOffsetSec;
 	}
 
-	public int getUtcOffsetSec(){
+    /**
+     * Get utc offset sec int.
+     *
+     * @return the int
+     */
+    public int getUtcOffsetSec(){
 		return utcOffsetSec;
 	}
 
-	public void setIsDst(String isDst){
+    /**
+     * Set is dst.
+     *
+     * @param isDst the is dst
+     */
+    public void setIsDst(String isDst){
 		this.isDst = isDst;
 	}
 
-	public String getIsDst(){
+    /**
+     * Get is dst string.
+     *
+     * @return the string
+     */
+    public String getIsDst(){
 		return isDst;
 	}
 

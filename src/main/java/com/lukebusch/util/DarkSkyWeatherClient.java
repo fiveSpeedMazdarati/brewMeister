@@ -8,6 +8,7 @@ import javax.ws.rs.client.ResponseProcessingException;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.Properties;
+
 /**
  * A client to access the Dark Sky weather API
  * https://darksky.net/dev
@@ -39,11 +40,13 @@ public class DarkSkyWeatherClient {
     }
 
     /**
-     * @param latitude the latitude for the location expressed as a String. Positive numbers for North, negative for South e.g. -79.342
+     * Gets weather data.
+     *
+     * @param latitude  the latitude for the location expressed as a String. Positive numbers for North, negative for South e.g. -79.342
      * @param longitude the longitude for the location expressed as a String. Positive numbers for East, negative for West e.g. 56.224
-     * @param time the date and time to retrieve expressed as a Unix timestamp
+     * @param time      the date and time to retrieve expressed as a Unix timestamp
      * @return a string containing the weather information in JSON format
-     * @throws Exception in case there is an error contacting the web service
+     * @throws ResponseProcessingException the response processing exception
      */
     public String getWeatherData(String latitude, String longitude, String time) throws ResponseProcessingException {
         String response;

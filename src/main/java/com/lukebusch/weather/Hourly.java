@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Hourly.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Hourly{
 
@@ -16,27 +19,57 @@ public class Hourly{
 	@JsonProperty("icon")
 	private String icon;
 
-	public void setSummary(String summary){
+    /**
+     * Set summary.
+     *
+     * @param summary the summary
+     */
+    public void setSummary(String summary){
 		this.summary = summary;
 	}
 
-	public String getSummary(){
+    /**
+     * Get summary string.
+     *
+     * @return the string
+     */
+    public String getSummary(){
 		return summary;
 	}
 
-	public void setData(List<DataItem> data){
+    /**
+     * Set data.
+     *
+     * @param data the data
+     */
+    public void setData(List<DataItem> data){
 		this.data = data;
 	}
 
-	public List<DataItem> getData(){
+    /**
+     * Get data list.
+     *
+     * @return the list
+     */
+    public List<DataItem> getData(){
 		return data;
 	}
 
-	public void setIcon(String icon){
+    /**
+     * Set icon.
+     *
+     * @param icon the icon
+     */
+    public void setIcon(String icon){
 		this.icon = icon;
 	}
 
-	public String getIcon(){
+    /**
+     * Get icon string.
+     *
+     * @return the string
+     */
+    public String getIcon(){
 		return icon;
 	}
 

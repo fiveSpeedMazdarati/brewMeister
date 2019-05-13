@@ -3,6 +3,9 @@ package com.lukebusch.weather;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Currently.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Currently{
 
@@ -63,155 +66,345 @@ public class Currently{
 	@JsonProperty("uvIndex")
 	private int uvIndex;
 
-	public void setSummary(String summary){
+    /**
+     * Set summary.
+     *
+     * @param summary the summary
+     */
+    public void setSummary(String summary){
 		this.summary = summary;
 	}
 
-	public String getSummary(){
+    /**
+     * Get summary string.
+     *
+     * @return the string
+     */
+    public String getSummary(){
 		return summary;
 	}
 
-	public void setPrecipProbability(int precipProbability){
+    /**
+     * Set precip probability.
+     *
+     * @param precipProbability the precip probability
+     */
+    public void setPrecipProbability(int precipProbability){
 		this.precipProbability = precipProbability;
 	}
 
-	public int getPrecipProbability(){
+    /**
+     * Get precip probability int.
+     *
+     * @return the int
+     */
+    public int getPrecipProbability(){
 		return precipProbability;
 	}
 
-	public void setVisibility(int visibility){
+    /**
+     * Set visibility.
+     *
+     * @param visibility the visibility
+     */
+    public void setVisibility(int visibility){
 		this.visibility = visibility;
 	}
 
-	public int getVisibility(){
+    /**
+     * Get visibility int.
+     *
+     * @return the int
+     */
+    public int getVisibility(){
 		return visibility;
 	}
 
-	public void setWindGust(double windGust){
+    /**
+     * Set wind gust.
+     *
+     * @param windGust the wind gust
+     */
+    public void setWindGust(double windGust){
 		this.windGust = windGust;
 	}
 
-	public double getWindGust(){
+    /**
+     * Get wind gust double.
+     *
+     * @return the double
+     */
+    public double getWindGust(){
 		return windGust;
 	}
 
-	public void setPrecipIntensity(int precipIntensity){
+    /**
+     * Set precip intensity.
+     *
+     * @param precipIntensity the precip intensity
+     */
+    public void setPrecipIntensity(int precipIntensity){
 		this.precipIntensity = precipIntensity;
 	}
 
-	public int getPrecipIntensity(){
+    /**
+     * Get precip intensity int.
+     *
+     * @return the int
+     */
+    public int getPrecipIntensity(){
 		return precipIntensity;
 	}
 
-	public void setIcon(String icon){
+    /**
+     * Set icon.
+     *
+     * @param icon the icon
+     */
+    public void setIcon(String icon){
 		this.icon = icon;
 	}
 
-	public String getIcon(){
+    /**
+     * Get icon string.
+     *
+     * @return the string
+     */
+    public String getIcon(){
 		return icon;
 	}
 
-	public void setCloudCover(double cloudCover){
+    /**
+     * Set cloud cover.
+     *
+     * @param cloudCover the cloud cover
+     */
+    public void setCloudCover(double cloudCover){
 		this.cloudCover = cloudCover;
 	}
 
-	public double getCloudCover(){
+    /**
+     * Get cloud cover double.
+     *
+     * @return the double
+     */
+    public double getCloudCover(){
 		return cloudCover;
 	}
 
-	public void setWindBearing(int windBearing){
+    /**
+     * Set wind bearing.
+     *
+     * @param windBearing the wind bearing
+     */
+    public void setWindBearing(int windBearing){
 		this.windBearing = windBearing;
 	}
 
-	public int getWindBearing(){
+    /**
+     * Get wind bearing int.
+     *
+     * @return the int
+     */
+    public int getWindBearing(){
 		return windBearing;
 	}
 
-	public void setApparentTemperature(double apparentTemperature){
+    /**
+     * Set apparent temperature.
+     *
+     * @param apparentTemperature the apparent temperature
+     */
+    public void setApparentTemperature(double apparentTemperature){
 		this.apparentTemperature = apparentTemperature;
 	}
 
-	public double getApparentTemperature(){
+    /**
+     * Get apparent temperature double.
+     *
+     * @return the double
+     */
+    public double getApparentTemperature(){
 		return apparentTemperature;
 	}
 
-	public void setPressure(double pressure){
+    /**
+     * Set pressure.
+     *
+     * @param pressure the pressure
+     */
+    public void setPressure(double pressure){
 		this.pressure = pressure;
 	}
 
-	public double getPressure(){
+    /**
+     * Get pressure double.
+     *
+     * @return the double
+     */
+    public double getPressure(){
 		return pressure;
 	}
 
-	public void setDewPoint(double dewPoint){
+    /**
+     * Set dew point.
+     *
+     * @param dewPoint the dew point
+     */
+    public void setDewPoint(double dewPoint){
 		this.dewPoint = dewPoint;
 	}
 
-	public double getDewPoint(){
+    /**
+     * Get dew point double.
+     *
+     * @return the double
+     */
+    public double getDewPoint(){
 		return dewPoint;
 	}
 
-	public void setOzone(double ozone){
+    /**
+     * Set ozone.
+     *
+     * @param ozone the ozone
+     */
+    public void setOzone(double ozone){
 		this.ozone = ozone;
 	}
 
-	public double getOzone(){
+    /**
+     * Get ozone double.
+     *
+     * @return the double
+     */
+    public double getOzone(){
 		return ozone;
 	}
 
-	public void setNearestStormBearing(int nearestStormBearing){
+    /**
+     * Set nearest storm bearing.
+     *
+     * @param nearestStormBearing the nearest storm bearing
+     */
+    public void setNearestStormBearing(int nearestStormBearing){
 		this.nearestStormBearing = nearestStormBearing;
 	}
 
-	public int getNearestStormBearing(){
+    /**
+     * Get nearest storm bearing int.
+     *
+     * @return the int
+     */
+    public int getNearestStormBearing(){
 		return nearestStormBearing;
 	}
 
-	public void setNearestStormDistance(int nearestStormDistance){
+    /**
+     * Set nearest storm distance.
+     *
+     * @param nearestStormDistance the nearest storm distance
+     */
+    public void setNearestStormDistance(int nearestStormDistance){
 		this.nearestStormDistance = nearestStormDistance;
 	}
 
-	public int getNearestStormDistance(){
+    /**
+     * Get nearest storm distance int.
+     *
+     * @return the int
+     */
+    public int getNearestStormDistance(){
 		return nearestStormDistance;
 	}
 
-	public void setTemperature(double temperature){
+    /**
+     * Set temperature.
+     *
+     * @param temperature the temperature
+     */
+    public void setTemperature(double temperature){
 		this.temperature = temperature;
 	}
 
-	public double getTemperature(){
+    /**
+     * Get temperature double.
+     *
+     * @return the double
+     */
+    public double getTemperature(){
 		return temperature;
 	}
 
-	public void setHumidity(double humidity){
+    /**
+     * Set humidity.
+     *
+     * @param humidity the humidity
+     */
+    public void setHumidity(double humidity){
 		this.humidity = humidity;
 	}
 
-	public double getHumidity(){
+    /**
+     * Get humidity double.
+     *
+     * @return the double
+     */
+    public double getHumidity(){
 		return humidity;
 	}
 
-	public void setTime(int time){
+    /**
+     * Set time.
+     *
+     * @param time the time
+     */
+    public void setTime(int time){
 		this.time = time;
 	}
 
-	public int getTime(){
+    /**
+     * Get time int.
+     *
+     * @return the int
+     */
+    public int getTime(){
 		return time;
 	}
 
-	public void setWindSpeed(double windSpeed){
+    /**
+     * Set wind speed.
+     *
+     * @param windSpeed the wind speed
+     */
+    public void setWindSpeed(double windSpeed){
 		this.windSpeed = windSpeed;
 	}
 
-	public double getWindSpeed(){
+    /**
+     * Get wind speed double.
+     *
+     * @return the double
+     */
+    public double getWindSpeed(){
 		return windSpeed;
 	}
 
-	public void setUvIndex(int uvIndex){
+    /**
+     * Set uv index.
+     *
+     * @param uvIndex the uv index
+     */
+    public void setUvIndex(int uvIndex){
 		this.uvIndex = uvIndex;
 	}
 
-	public int getUvIndex(){
+    /**
+     * Get uv index int.
+     *
+     * @return the int
+     */
+    public int getUvIndex(){
 		return uvIndex;
 	}
 

@@ -37,6 +37,7 @@ public class Batch {
     private User user;
     @ManyToOne
     private Style style;
+
     /**
      * Instantiates a new Batch.
      */
@@ -46,14 +47,14 @@ public class Batch {
     /**
      * Instantiates a new Batch.
      *
-     * @param title                 the title
-     * @param recipe                the recipe
-     * @param brewDate              the brew date
-     * @param bottleDate            the bottle date
-     * @param readyDate             the ready date
-     * @param expirationDate        the expiration date
+     * @param title                  the title
+     * @param recipe                 the recipe
+     * @param brewDate               the brew date
+     * @param bottleDate             the bottle date
+     * @param readyDate              the ready date
+     * @param expirationDate         the expiration date
      * @param initialSpecificGravity the initial specific gravity
-     * @param finalSpecificGravity  the final specific gravity
+     * @param finalSpecificGravity   the final specific gravity
      */
     public Batch(String title, String recipe, LocalDate brewDate, LocalDate bottleDate, LocalDate readyDate, LocalDate expirationDate, double initialSpecificGravity, double finalSpecificGravity) {
 
@@ -249,6 +250,7 @@ public class Batch {
 
     /**
      * Gets the notes for this batch
+     *
      * @return the note made for this batch
      */
     public String getNotes() {
@@ -257,6 +259,7 @@ public class Batch {
 
     /**
      * Sets the notes for this batch. This method will not append notes to existing!
+     *
      * @param notes the notes for this batch
      */
     public void setNotes(String notes) {

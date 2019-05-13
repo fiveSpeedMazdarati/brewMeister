@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Flags.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Flags{
 
@@ -16,27 +19,57 @@ public class Flags{
 	@JsonProperty("units")
 	private String units;
 
-	public void setNearestStation(double nearestStation){
+    /**
+     * Set nearest station.
+     *
+     * @param nearestStation the nearest station
+     */
+    public void setNearestStation(double nearestStation){
 		this.nearestStation = nearestStation;
 	}
 
-	public double getNearestStation(){
+    /**
+     * Get nearest station double.
+     *
+     * @return the double
+     */
+    public double getNearestStation(){
 		return nearestStation;
 	}
 
-	public void setSources(List<String> sources){
+    /**
+     * Set sources.
+     *
+     * @param sources the sources
+     */
+    public void setSources(List<String> sources){
 		this.sources = sources;
 	}
 
-	public List<String> getSources(){
+    /**
+     * Get sources list.
+     *
+     * @return the list
+     */
+    public List<String> getSources(){
 		return sources;
 	}
 
-	public void setUnits(String units){
+    /**
+     * Set units.
+     *
+     * @param units the units
+     */
+    public void setUnits(String units){
 		this.units = units;
 	}
 
-	public String getUnits(){
+    /**
+     * Get units string.
+     *
+     * @return the string
+     */
+    public String getUnits(){
 		return units;
 	}
 

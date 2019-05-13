@@ -3,6 +3,9 @@ package com.lukebusch.weather;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Data item.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class DataItem{
 
@@ -108,275 +111,615 @@ public class DataItem{
 	@JsonProperty("apparentTemperatureMaxTime")
 	private int apparentTemperatureMaxTime;
 
-	public void setApparentTemperatureMinTime(int apparentTemperatureMinTime){
+    /**
+     * Set apparent temperature min time.
+     *
+     * @param apparentTemperatureMinTime the apparent temperature min time
+     */
+    public void setApparentTemperatureMinTime(int apparentTemperatureMinTime){
 		this.apparentTemperatureMinTime = apparentTemperatureMinTime;
 	}
 
-	public int getApparentTemperatureMinTime(){
+    /**
+     * Get apparent temperature min time int.
+     *
+     * @return the int
+     */
+    public int getApparentTemperatureMinTime(){
 		return apparentTemperatureMinTime;
 	}
 
-	public void setTemperatureMax(double temperatureMax){
+    /**
+     * Set temperature max.
+     *
+     * @param temperatureMax the temperature max
+     */
+    public void setTemperatureMax(double temperatureMax){
 		this.temperatureMax = temperatureMax;
 	}
 
-	public double getTemperatureMax(){
+    /**
+     * Get temperature max double.
+     *
+     * @return the double
+     */
+    public double getTemperatureMax(){
 		return temperatureMax;
 	}
 
-	public void setIcon(String icon){
+    /**
+     * Set icon.
+     *
+     * @param icon the icon
+     */
+    public void setIcon(String icon){
 		this.icon = icon;
 	}
 
-	public String getIcon(){
+    /**
+     * Get icon string.
+     *
+     * @return the string
+     */
+    public String getIcon(){
 		return icon;
 	}
 
-	public void setPrecipIntensityMax(int precipIntensityMax){
+    /**
+     * Set precip intensity max.
+     *
+     * @param precipIntensityMax the precip intensity max
+     */
+    public void setPrecipIntensityMax(int precipIntensityMax){
 		this.precipIntensityMax = precipIntensityMax;
 	}
 
-	public int getPrecipIntensityMax(){
+    /**
+     * Get precip intensity max int.
+     *
+     * @return the int
+     */
+    public int getPrecipIntensityMax(){
 		return precipIntensityMax;
 	}
 
-	public void setWindBearing(int windBearing){
+    /**
+     * Set wind bearing.
+     *
+     * @param windBearing the wind bearing
+     */
+    public void setWindBearing(int windBearing){
 		this.windBearing = windBearing;
 	}
 
-	public int getWindBearing(){
+    /**
+     * Get wind bearing int.
+     *
+     * @return the int
+     */
+    public int getWindBearing(){
 		return windBearing;
 	}
 
-	public void setTemperatureMaxTime(int temperatureMaxTime){
+    /**
+     * Set temperature max time.
+     *
+     * @param temperatureMaxTime the temperature max time
+     */
+    public void setTemperatureMaxTime(int temperatureMaxTime){
 		this.temperatureMaxTime = temperatureMaxTime;
 	}
 
-	public int getTemperatureMaxTime(){
+    /**
+     * Get temperature max time int.
+     *
+     * @return the int
+     */
+    public int getTemperatureMaxTime(){
 		return temperatureMaxTime;
 	}
 
-	public void setApparentTemperatureMin(int apparentTemperatureMin){
+    /**
+     * Set apparent temperature min.
+     *
+     * @param apparentTemperatureMin the apparent temperature min
+     */
+    public void setApparentTemperatureMin(int apparentTemperatureMin){
 		this.apparentTemperatureMin = apparentTemperatureMin;
 	}
 
-	public int getApparentTemperatureMin(){
+    /**
+     * Get apparent temperature min int.
+     *
+     * @return the int
+     */
+    public int getApparentTemperatureMin(){
 		return apparentTemperatureMin;
 	}
 
-	public void setSunsetTime(int sunsetTime){
+    /**
+     * Set sunset time.
+     *
+     * @param sunsetTime the sunset time
+     */
+    public void setSunsetTime(int sunsetTime){
 		this.sunsetTime = sunsetTime;
 	}
 
-	public int getSunsetTime(){
+    /**
+     * Get sunset time int.
+     *
+     * @return the int
+     */
+    public int getSunsetTime(){
 		return sunsetTime;
 	}
 
-	public void setTemperatureLow(double temperatureLow){
+    /**
+     * Set temperature low.
+     *
+     * @param temperatureLow the temperature low
+     */
+    public void setTemperatureLow(double temperatureLow){
 		this.temperatureLow = temperatureLow;
 	}
 
-	public double getTemperatureLow(){
+    /**
+     * Get temperature low double.
+     *
+     * @return the double
+     */
+    public double getTemperatureLow(){
 		return temperatureLow;
 	}
 
-	public void setHumidity(double humidity){
+    /**
+     * Set humidity.
+     *
+     * @param humidity the humidity
+     */
+    public void setHumidity(double humidity){
 		this.humidity = humidity;
 	}
 
-	public double getHumidity(){
+    /**
+     * Get humidity double.
+     *
+     * @return the double
+     */
+    public double getHumidity(){
 		return humidity;
 	}
 
-	public void setMoonPhase(double moonPhase){
+    /**
+     * Set moon phase.
+     *
+     * @param moonPhase the moon phase
+     */
+    public void setMoonPhase(double moonPhase){
 		this.moonPhase = moonPhase;
 	}
 
-	public double getMoonPhase(){
+    /**
+     * Get moon phase double.
+     *
+     * @return the double
+     */
+    public double getMoonPhase(){
 		return moonPhase;
 	}
 
-	public void setWindSpeed(double windSpeed){
+    /**
+     * Set wind speed.
+     *
+     * @param windSpeed the wind speed
+     */
+    public void setWindSpeed(double windSpeed){
 		this.windSpeed = windSpeed;
 	}
 
-	public double getWindSpeed(){
+    /**
+     * Get wind speed double.
+     *
+     * @return the double
+     */
+    public double getWindSpeed(){
 		return windSpeed;
 	}
 
-	public void setApparentTemperatureLowTime(int apparentTemperatureLowTime){
+    /**
+     * Set apparent temperature low time.
+     *
+     * @param apparentTemperatureLowTime the apparent temperature low time
+     */
+    public void setApparentTemperatureLowTime(int apparentTemperatureLowTime){
 		this.apparentTemperatureLowTime = apparentTemperatureLowTime;
 	}
 
-	public int getApparentTemperatureLowTime(){
+    /**
+     * Get apparent temperature low time int.
+     *
+     * @return the int
+     */
+    public int getApparentTemperatureLowTime(){
 		return apparentTemperatureLowTime;
 	}
 
-	public void setSunriseTime(int sunriseTime){
+    /**
+     * Set sunrise time.
+     *
+     * @param sunriseTime the sunrise time
+     */
+    public void setSunriseTime(int sunriseTime){
 		this.sunriseTime = sunriseTime;
 	}
 
-	public int getSunriseTime(){
+    /**
+     * Get sunrise time int.
+     *
+     * @return the int
+     */
+    public int getSunriseTime(){
 		return sunriseTime;
 	}
 
-	public void setApparentTemperatureLow(double apparentTemperatureLow){
+    /**
+     * Set apparent temperature low.
+     *
+     * @param apparentTemperatureLow the apparent temperature low
+     */
+    public void setApparentTemperatureLow(double apparentTemperatureLow){
 		this.apparentTemperatureLow = apparentTemperatureLow;
 	}
 
-	public double getApparentTemperatureLow(){
+    /**
+     * Get apparent temperature low double.
+     *
+     * @return the double
+     */
+    public double getApparentTemperatureLow(){
 		return apparentTemperatureLow;
 	}
 
-	public void setSummary(String summary){
+    /**
+     * Set summary.
+     *
+     * @param summary the summary
+     */
+    public void setSummary(String summary){
 		this.summary = summary;
 	}
 
-	public String getSummary(){
+    /**
+     * Get summary string.
+     *
+     * @return the string
+     */
+    public String getSummary(){
 		return summary;
 	}
 
-	public void setPrecipProbability(int precipProbability){
+    /**
+     * Set precip probability.
+     *
+     * @param precipProbability the precip probability
+     */
+    public void setPrecipProbability(int precipProbability){
 		this.precipProbability = precipProbability;
 	}
 
-	public int getPrecipProbability(){
+    /**
+     * Get precip probability int.
+     *
+     * @return the int
+     */
+    public int getPrecipProbability(){
 		return precipProbability;
 	}
 
-	public void setTemperatureHighTime(int temperatureHighTime){
+    /**
+     * Set temperature high time.
+     *
+     * @param temperatureHighTime the temperature high time
+     */
+    public void setTemperatureHighTime(int temperatureHighTime){
 		this.temperatureHighTime = temperatureHighTime;
 	}
 
-	public int getTemperatureHighTime(){
+    /**
+     * Get temperature high time int.
+     *
+     * @return the int
+     */
+    public int getTemperatureHighTime(){
 		return temperatureHighTime;
 	}
 
-	public void setVisibility(int visibility){
+    /**
+     * Set visibility.
+     *
+     * @param visibility the visibility
+     */
+    public void setVisibility(int visibility){
 		this.visibility = visibility;
 	}
 
-	public int getVisibility(){
+    /**
+     * Get visibility int.
+     *
+     * @return the int
+     */
+    public int getVisibility(){
 		return visibility;
 	}
 
-	public void setPrecipIntensity(int precipIntensity){
+    /**
+     * Set precip intensity.
+     *
+     * @param precipIntensity the precip intensity
+     */
+    public void setPrecipIntensity(int precipIntensity){
 		this.precipIntensity = precipIntensity;
 	}
 
-	public int getPrecipIntensity(){
+    /**
+     * Get precip intensity int.
+     *
+     * @return the int
+     */
+    public int getPrecipIntensity(){
 		return precipIntensity;
 	}
 
-	public void setCloudCover(double cloudCover){
+    /**
+     * Set cloud cover.
+     *
+     * @param cloudCover the cloud cover
+     */
+    public void setCloudCover(double cloudCover){
 		this.cloudCover = cloudCover;
 	}
 
-	public double getCloudCover(){
+    /**
+     * Get cloud cover double.
+     *
+     * @return the double
+     */
+    public double getCloudCover(){
 		return cloudCover;
 	}
 
-	public void setTemperatureMin(int temperatureMin){
+    /**
+     * Set temperature min.
+     *
+     * @param temperatureMin the temperature min
+     */
+    public void setTemperatureMin(int temperatureMin){
 		this.temperatureMin = temperatureMin;
 	}
 
-	public int getTemperatureMin(){
+    /**
+     * Get temperature min int.
+     *
+     * @return the int
+     */
+    public int getTemperatureMin(){
 		return temperatureMin;
 	}
 
-	public void setApparentTemperatureHighTime(int apparentTemperatureHighTime){
+    /**
+     * Set apparent temperature high time.
+     *
+     * @param apparentTemperatureHighTime the apparent temperature high time
+     */
+    public void setApparentTemperatureHighTime(int apparentTemperatureHighTime){
 		this.apparentTemperatureHighTime = apparentTemperatureHighTime;
 	}
 
-	public int getApparentTemperatureHighTime(){
+    /**
+     * Get apparent temperature high time int.
+     *
+     * @return the int
+     */
+    public int getApparentTemperatureHighTime(){
 		return apparentTemperatureHighTime;
 	}
 
-	public void setPressure(double pressure){
+    /**
+     * Set pressure.
+     *
+     * @param pressure the pressure
+     */
+    public void setPressure(double pressure){
 		this.pressure = pressure;
 	}
 
-	public double getPressure(){
+    /**
+     * Get pressure double.
+     *
+     * @return the double
+     */
+    public double getPressure(){
 		return pressure;
 	}
 
-	public void setDewPoint(double dewPoint){
+    /**
+     * Set dew point.
+     *
+     * @param dewPoint the dew point
+     */
+    public void setDewPoint(double dewPoint){
 		this.dewPoint = dewPoint;
 	}
 
-	public double getDewPoint(){
+    /**
+     * Get dew point double.
+     *
+     * @return the double
+     */
+    public double getDewPoint(){
 		return dewPoint;
 	}
 
-	public void setTemperatureMinTime(int temperatureMinTime){
+    /**
+     * Set temperature min time.
+     *
+     * @param temperatureMinTime the temperature min time
+     */
+    public void setTemperatureMinTime(int temperatureMinTime){
 		this.temperatureMinTime = temperatureMinTime;
 	}
 
-	public int getTemperatureMinTime(){
+    /**
+     * Get temperature min time int.
+     *
+     * @return the int
+     */
+    public int getTemperatureMinTime(){
 		return temperatureMinTime;
 	}
 
-	public void setUvIndexTime(int uvIndexTime){
+    /**
+     * Set uv index time.
+     *
+     * @param uvIndexTime the uv index time
+     */
+    public void setUvIndexTime(int uvIndexTime){
 		this.uvIndexTime = uvIndexTime;
 	}
 
-	public int getUvIndexTime(){
+    /**
+     * Get uv index time int.
+     *
+     * @return the int
+     */
+    public int getUvIndexTime(){
 		return uvIndexTime;
 	}
 
-	public void setApparentTemperatureMax(double apparentTemperatureMax){
+    /**
+     * Set apparent temperature max.
+     *
+     * @param apparentTemperatureMax the apparent temperature max
+     */
+    public void setApparentTemperatureMax(double apparentTemperatureMax){
 		this.apparentTemperatureMax = apparentTemperatureMax;
 	}
 
-	public double getApparentTemperatureMax(){
+    /**
+     * Get apparent temperature max double.
+     *
+     * @return the double
+     */
+    public double getApparentTemperatureMax(){
 		return apparentTemperatureMax;
 	}
 
-	public void setTemperatureHigh(double temperatureHigh){
+    /**
+     * Set temperature high.
+     *
+     * @param temperatureHigh the temperature high
+     */
+    public void setTemperatureHigh(double temperatureHigh){
 		this.temperatureHigh = temperatureHigh;
 	}
 
-	public double getTemperatureHigh(){
+    /**
+     * Get temperature high double.
+     *
+     * @return the double
+     */
+    public double getTemperatureHigh(){
 		return temperatureHigh;
 	}
 
-	public void setTemperatureLowTime(int temperatureLowTime){
+    /**
+     * Set temperature low time.
+     *
+     * @param temperatureLowTime the temperature low time
+     */
+    public void setTemperatureLowTime(int temperatureLowTime){
 		this.temperatureLowTime = temperatureLowTime;
 	}
 
-	public int getTemperatureLowTime(){
+    /**
+     * Get temperature low time int.
+     *
+     * @return the int
+     */
+    public int getTemperatureLowTime(){
 		return temperatureLowTime;
 	}
 
-	public void setApparentTemperatureHigh(double apparentTemperatureHigh){
+    /**
+     * Set apparent temperature high.
+     *
+     * @param apparentTemperatureHigh the apparent temperature high
+     */
+    public void setApparentTemperatureHigh(double apparentTemperatureHigh){
 		this.apparentTemperatureHigh = apparentTemperatureHigh;
 	}
 
-	public double getApparentTemperatureHigh(){
+    /**
+     * Get apparent temperature high double.
+     *
+     * @return the double
+     */
+    public double getApparentTemperatureHigh(){
 		return apparentTemperatureHigh;
 	}
 
-	public void setTime(int time){
+    /**
+     * Set time.
+     *
+     * @param time the time
+     */
+    public void setTime(int time){
 		this.time = time;
 	}
 
-	public int getTime(){
+    /**
+     * Get time int.
+     *
+     * @return the int
+     */
+    public int getTime(){
 		return time;
 	}
 
-	public void setUvIndex(int uvIndex){
+    /**
+     * Set uv index.
+     *
+     * @param uvIndex the uv index
+     */
+    public void setUvIndex(int uvIndex){
 		this.uvIndex = uvIndex;
 	}
 
-	public int getUvIndex(){
+    /**
+     * Get uv index int.
+     *
+     * @return the int
+     */
+    public int getUvIndex(){
 		return uvIndex;
 	}
 
-	public void setApparentTemperatureMaxTime(int apparentTemperatureMaxTime){
+    /**
+     * Set apparent temperature max time.
+     *
+     * @param apparentTemperatureMaxTime the apparent temperature max time
+     */
+    public void setApparentTemperatureMaxTime(int apparentTemperatureMaxTime){
 		this.apparentTemperatureMaxTime = apparentTemperatureMaxTime;
 	}
 
-	public int getApparentTemperatureMaxTime(){
+    /**
+     * Get apparent temperature max time int.
+     *
+     * @return the int
+     */
+    public int getApparentTemperatureMaxTime(){
 		return apparentTemperatureMaxTime;
 	}
 

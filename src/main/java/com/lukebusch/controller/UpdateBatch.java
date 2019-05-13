@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * The type Update batch.
+ */
 @WebServlet(name = "UpdateBatch", urlPatterns = "/updateBatch")
 /**
  * a class to update a given batch in the database

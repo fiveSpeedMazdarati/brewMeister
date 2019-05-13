@@ -18,6 +18,7 @@ import java.time.LocalDate;
 
 /**
  * a class to create a new batch with the given information
+ *
  * @author lbusch
  */
 @WebServlet(name = "CreateNewBatch", urlPatterns = "/createNewBatch")

@@ -5,14 +5,21 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * The type Properties loader.
+ */
 public class PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * The Properties.
+     */
     Properties properties;
 
     /**
      * Gets the properties for the webservices from the properties file
+     *
      * @return a Properties object with the web services' API information
      */
     public Properties loadWebserviceProperties() {

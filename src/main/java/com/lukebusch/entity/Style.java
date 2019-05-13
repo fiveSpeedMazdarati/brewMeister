@@ -27,10 +27,20 @@ public class Style {
     @JoinColumn(name = "id")
     private Set<Batch> batches = new HashSet<>();
 
+    /**
+     * Gets batches.
+     *
+     * @return the batches
+     */
     public Set<Batch> getBatches() {
         return batches;
     }
 
+    /**
+     * Sets batches.
+     *
+     * @param batches the batches
+     */
     public void setBatches(Set<Batch> batches) {
         this.batches = batches;
     }

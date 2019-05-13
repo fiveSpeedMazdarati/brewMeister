@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The type Show index.
+ */
 @WebServlet(name = "ShowIndex", urlPatterns = "/showIndex")
 public class ShowIndex extends HttpServlet {
 

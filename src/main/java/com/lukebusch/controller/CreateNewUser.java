@@ -22,6 +22,7 @@ import java.util.Set;
 
 /**
  * A servlet to create a new user
+ *
  * @author lbusch
  */
 @WebServlet(name = "CreateNewUser", urlPatterns = "/createNewUser")
@@ -85,6 +86,7 @@ public class CreateNewUser extends HttpServlet {
 
     /**
      * checks to see if a username is available for use (i.e. not in the user table already)
+     *
      * @param username the username to look for
      * @return whether the username is available
      */
@@ -99,6 +101,7 @@ public class CreateNewUser extends HttpServlet {
 
     /**
      * Checks to see if an email address is available for use (i.e. not in the user table already)
+     *
      * @param email the email address to look for
      * @return whether the email address is available
      */

@@ -10,6 +10,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.Properties;
 
+/**
+ * The type Zip code client.
+ */
 public class ZipCodeClient {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -21,6 +24,9 @@ public class ZipCodeClient {
     private String dataFormat;
     private String units;
 
+    /**
+     * Instantiates a new Zip code client.
+     */
     public ZipCodeClient() {
         loader = new PropertiesLoader();
         properties = loader.loadWebserviceProperties();
@@ -34,8 +40,9 @@ public class ZipCodeClient {
 
     /**
      * Gets a response from www.zipcodeapi.com/api based on the provided zip code
-     * @param zipCode
-     * @return
+     *
+     * @param zipCode the zip code
+     * @return info for zip
      */
     public String getInfoForZip(String zipCode) {
 

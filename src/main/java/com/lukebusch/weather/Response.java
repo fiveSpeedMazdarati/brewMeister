@@ -3,6 +3,9 @@ package com.lukebusch.weather;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Response.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Response{
 
@@ -21,43 +24,93 @@ public class Response{
 	@JsonProperty("longitude")
 	private double longitude;
 
-	public void setOffset(int offset){
+    /**
+     * Set offset.
+     *
+     * @param offset the offset
+     */
+    public void setOffset(int offset){
 		this.offset = offset;
 	}
 
-	public int getOffset(){
+    /**
+     * Get offset int.
+     *
+     * @return the int
+     */
+    public int getOffset(){
 		return offset;
 	}
 
-	public void setTimezone(String timezone){
+    /**
+     * Set timezone.
+     *
+     * @param timezone the timezone
+     */
+    public void setTimezone(String timezone){
 		this.timezone = timezone;
 	}
 
-	public String getTimezone(){
+    /**
+     * Get timezone string.
+     *
+     * @return the string
+     */
+    public String getTimezone(){
 		return timezone;
 	}
 
-	public void setLatitude(double latitude){
+    /**
+     * Set latitude.
+     *
+     * @param latitude the latitude
+     */
+    public void setLatitude(double latitude){
 		this.latitude = latitude;
 	}
 
-	public double getLatitude(){
+    /**
+     * Get latitude double.
+     *
+     * @return the double
+     */
+    public double getLatitude(){
 		return latitude;
 	}
 
-	public void setDaily(Daily daily){
+    /**
+     * Set daily.
+     *
+     * @param daily the daily
+     */
+    public void setDaily(Daily daily){
 		this.daily = daily;
 	}
 
-	public Daily getDaily(){
+    /**
+     * Get daily daily.
+     *
+     * @return the daily
+     */
+    public Daily getDaily(){
 		return daily;
 	}
 
-	public void setLongitude(double longitude){
+    /**
+     * Set longitude.
+     *
+     * @param longitude the longitude
+     */
+    public void setLongitude(double longitude){
 		this.longitude = longitude;
 	}
 
-	public double getLongitude(){
+    /**
+     * Get longitude double.
+     *
+     * @return the double
+     */
+    public double getLongitude(){
 		return longitude;
 	}
 

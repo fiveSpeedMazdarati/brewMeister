@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Response.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Response{
 
@@ -28,59 +31,129 @@ public class Response{
 	@JsonProperty("lat")
 	private double lat;
 
-	public void setLng(double lng){
+    /**
+     * Set lng.
+     *
+     * @param lng the lng
+     */
+    public void setLng(double lng){
 		this.lng = lng;
 	}
 
-	public double getLng(){
+    /**
+     * Get lng double.
+     *
+     * @return the double
+     */
+    public double getLng(){
 		return lng;
 	}
 
-	public void setCity(String city){
+    /**
+     * Set city.
+     *
+     * @param city the city
+     */
+    public void setCity(String city){
 		this.city = city;
 	}
 
-	public String getCity(){
+    /**
+     * Get city string.
+     *
+     * @return the string
+     */
+    public String getCity(){
 		return city;
 	}
 
-	public void setTimezone(Timezone timezone){
+    /**
+     * Set timezone.
+     *
+     * @param timezone the timezone
+     */
+    public void setTimezone(Timezone timezone){
 		this.timezone = timezone;
 	}
 
-	public Timezone getTimezone(){
+    /**
+     * Get timezone timezone.
+     *
+     * @return the timezone
+     */
+    public Timezone getTimezone(){
 		return timezone;
 	}
 
-	public void setAcceptableCityNames(List<Object> acceptableCityNames){
+    /**
+     * Set acceptable city names.
+     *
+     * @param acceptableCityNames the acceptable city names
+     */
+    public void setAcceptableCityNames(List<Object> acceptableCityNames){
 		this.acceptableCityNames = acceptableCityNames;
 	}
 
-	public List<Object> getAcceptableCityNames(){
+    /**
+     * Get acceptable city names list.
+     *
+     * @return the list
+     */
+    public List<Object> getAcceptableCityNames(){
 		return acceptableCityNames;
 	}
 
-	public void setState(String state){
+    /**
+     * Set state.
+     *
+     * @param state the state
+     */
+    public void setState(String state){
 		this.state = state;
 	}
 
-	public String getState(){
+    /**
+     * Get state string.
+     *
+     * @return the string
+     */
+    public String getState(){
 		return state;
 	}
 
-	public void setZipCode(String zipCode){
+    /**
+     * Set zip code.
+     *
+     * @param zipCode the zip code
+     */
+    public void setZipCode(String zipCode){
 		this.zipCode = zipCode;
 	}
 
-	public String getZipCode(){
+    /**
+     * Get zip code string.
+     *
+     * @return the string
+     */
+    public String getZipCode(){
 		return zipCode;
 	}
 
-	public void setLat(double lat){
+    /**
+     * Set lat.
+     *
+     * @param lat the lat
+     */
+    public void setLat(double lat){
 		this.lat = lat;
 	}
 
-	public double getLat(){
+    /**
+     * Get lat double.
+     *
+     * @return the double
+     */
+    public double getLat(){
 		return lat;
 	}
 

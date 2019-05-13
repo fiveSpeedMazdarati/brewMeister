@@ -17,6 +17,7 @@ import org.hibernate.Transaction;
 /**
  * A generic DAO somewhat inspired by http://rodrigouchoa.wordpress.com
  *
+ * @param <T> the type parameter
  */
 public class GenericDao<T> {
 
@@ -54,8 +55,10 @@ public class GenericDao<T> {
 
     /**
      * Gets an entity by id
-     * @param id entity id to search by
-     * @return entity
+     *
+     * @param <T> the type parameter
+     * @param id  entity id to search by
+     * @return entity by id
      */
     @SuppressWarnings("unchecked")
     public <T> T getById(int id) {
@@ -67,6 +70,10 @@ public class GenericDao<T> {
 
     /**
      * gets an entity by a specific property
+     *
+     * @param <T>      the type parameter
+     * @param property the property
+     * @return the by property
      */
     @SuppressWarnings("unchecked")
     public <T> T getByProperty(String property) {
@@ -79,9 +86,10 @@ public class GenericDao<T> {
     /**
      * Finds entities by one of its properties.
      * Thanks to Paula Waite and FatBike Trail Reports for providing this and making my life a lot easier
+     *
      * @param propertyName the property name.
-     * @param value the value by which to find.
-     * @return
+     * @param value        the value by which to find.
+     * @return list
      */
     public List<T> findByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();
@@ -97,10 +105,9 @@ public class GenericDao<T> {
      * Finds entities by multiple properties.
      * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
      * Thanks to Paula Waite and fat bike trail reports for loaning this to me and making my life a lot easier
+     *
      * @param propertyMap property and value pairs
      * @return entities with properties equal to those passed in the map
-     *
-     *
      */
     public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
 
@@ -130,8 +137,10 @@ public class GenericDao<T> {
         transaction.commit();
         session.close();
     }
+
     /**
      * update an Entity
+     *
      * @param entity Entity to be inserted or updated
      */
     public void saveOrUpdate(T entity) {
@@ -142,9 +151,12 @@ public class GenericDao<T> {
         transaction.commit();
         session.close();
     }
+
     /**
      * update or insert and entity
+     *
      * @param entity Entity to be inserted or updated
+     * @return the int
      */
     public int insert(T entity) {
         int id;

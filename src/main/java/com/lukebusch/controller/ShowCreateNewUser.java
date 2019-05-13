@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 /**
  * a class to show the new user signup form
+ *
  * @author lbusch
  */
 @WebServlet(name = "ShowCreateNewUser", urlPatterns = "/showCreateNewUser")

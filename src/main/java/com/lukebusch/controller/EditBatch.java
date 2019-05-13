@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * The type Edit batch.
+ */
 @WebServlet (name="EditBatch"
         , urlPatterns = { "/editBatch" }
 )

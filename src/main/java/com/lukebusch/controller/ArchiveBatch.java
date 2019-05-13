@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The type Archive batch.
+ */
 @WebServlet(name = "archiveBatch", urlPatterns = "/archiveBatch")
 /**
  * A servlet to handle a delete request
