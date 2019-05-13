@@ -21,6 +21,12 @@
           <label for="style">Style</label>
           <select class="form-control" id="style" name="style">
             <!-- all of the descriptions from the Style table go here as options -->
+            <option>Light Lager</option>
+            <option>Porter</option>
+            <option>Stout</option>
+            <option>American Pale Ale</option>
+            <option>American IPA</option>
+            <option>English Bitter</option>
           </select>
         </div>
         <div class="form-group">
@@ -42,8 +48,11 @@
           <input type="date" class="form-control" id="bottle-date" name="bottle-date" placeholder="Batch Name" required>
         </div>
       </div>
-    <div class="row">
-      <input type="submit" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="application/x-www-form-urlencoded">
+    <div class="col-xs-12">
+      <div class="btn-group">
+        <input class="btn btn-primary" type="submit" value="Create Batch" class="btn btn-submit" formaction="createNewBatch" formmethod="POST" formenctype="application/x-www-form-urlencoded">
+        <a class="btn btn-outline btn-warning" href="getAllBatchesForUser">Cancel</a>
+      </div>
     </div>
     </form>
   </div>

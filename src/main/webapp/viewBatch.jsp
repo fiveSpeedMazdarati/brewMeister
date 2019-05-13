@@ -60,9 +60,11 @@
                   <label for="expiration-date">Expiration Date</label>
                   <input class="form-control" type="date" id="expiration-date" value="${batch.expirationDate}" name="expiration-date"><br />
               </div>
-              <div class="weather-container">
-                  <div class="weather-report">${weather}</div>
-                  <div class="weather-report">${weather}</div>
+              <div class="weather-container panel panel-info">
+                  <div class="panel-heading">Brew Day Weather</div>
+                  <div class="panel-body">
+                    ${weatherData}
+                  </div>
               </div>
 
           </div>

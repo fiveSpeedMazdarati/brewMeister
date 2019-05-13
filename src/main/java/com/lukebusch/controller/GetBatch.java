@@ -1,9 +1,13 @@
 package com.lukebusch.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lukebusch.entity.Batch;
 import com.lukebusch.persistence.GenericDao;
 import com.lukebusch.util.DaoFactory;
 import com.lukebusch.util.DarkSkyWeatherClient;
+import com.lukebusch.weather.DataItem;
+import com.lukebusch.zipcodes.Response;
+import com.lukebusch.zipcodes.ZipCodeClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,6 +21,8 @@ import javax.ws.rs.client.ResponseProcessingException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet (name="GetBatch"
             , urlPatterns = { "/getBatch" }
@@ -50,18 +56,24 @@ public class GetBatch extends HttpServlet {
         logger.debug("Retrieving batch #" + id);
         logger.debug(batch);
 
+        String batchZipCode = batch.getUser().getZipCode();
+
         req.setAttribute("batch", batch);
 
         //TODO: get the lat/lon for the user's ZIP code
         // some hard coded values for now
+
+        req.getSession().getAttribute("loggedInUserId");
+
         String latitudeFromZip = "47.643";
         String longitudeFromZip = "-89.924";
-
 
         try {
 
         String weather = getWeatherFromApi(latitudeFromZip, longitudeFromZip, batch.getBrewDate());
-        req.setAttribute("weather", weather);
+
+
+        req.setAttribute("weatherData", weather);
 
         // weather retrieval was successful, so put that in the request
         req.setAttribute("weatherError", false);
@@ -93,14 +105,47 @@ public class GetBatch extends HttpServlet {
         return String.valueOf(unixTimestamp);
     }
 
+    /**
+     * gets the weather based on a latitude, longitude, and a point in time
+     *
+     * @param latitude
+     * @param longitude
+     * @param weatherDate
+     * @return a string of json data representing the weather for the given place and time
+     * @throws ResponseProcessingException if there is a problem processing the response
+     */
     private String getWeatherFromApi(String latitude, String longitude, LocalDate weatherDate) throws ResponseProcessingException {
 
         String weatherJson = "";
         DarkSkyWeatherClient client = new DarkSkyWeatherClient();
 
-        //TODO: replace the hard coded values with info from the user profile and batch date
         weatherJson = client.getWeatherData(latitude, longitude, convertToMillis(weatherDate));
 
         return weatherJson;
+    }
+
+    /**
+     * gets latitude and longitude for a given zipcode
+     * @param zipCode
+     * @return a list containing the latitude and longitude. The first value is the latitude, the second is the longitude
+     */
+    private List<String> getLatLonFromZip(String zipCode){
+
+        List<String> latLon = new ArrayList<>();
+        ZipCodeClient client = new ZipCodeClient();
+
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            Response response = mapper.readValue(client.getInfoForZip(zipCode), Response.class);
+
+            latLon.add(String.valueOf(response.getLat()));
+            latLon.add(String.valueOf(response.getLng()));
+
+        } catch (Exception exception) {
+            logger.error(exception.getMessage());
+        }
+        return latLon;
+
     }
 }
