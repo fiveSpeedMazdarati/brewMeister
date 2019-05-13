@@ -3,7 +3,7 @@
     <div class="navbar-collapse">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                <p class="h2">Brewmeister</p>
+                 Brewmeister
             </a>
         </div>
       <ul class="nav navbar-nav">

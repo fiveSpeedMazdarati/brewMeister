@@ -8,14 +8,18 @@
 </head>
 <body>
 <div class="container">
-<h2 class="text-center"><img class="responsive-image" src="beerGlasses.png"></h2>
-    <div class="panel panel-default center-block text-center">
-    <p class="h3">You've found BREWMEISTER!</p>
-      <div>
-        <a href="getAllBatchesForUser"><span class="btn">Login</span></a>
-        <span class="btn"><a href="showCreateNewUser">Sign Up</a></span>
+  <h2 class="text-center"><img class="responsive-image" src="beerGlasses.png"></h2>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default center-block text-center">
+        <p class="h3">You've found BREWMEISTER!</p>
+        <div>
+          <a href="getAllBatchesForUser"><span class="btn">Login</span></a>
+          <span class="btn"><a href="showCreateNewUser">Sign Up</a></span>
+        </div>
       </div>
     </div>
+  </div>
 </div>
 </body>
 </html>

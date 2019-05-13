@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "deleteBatch", urlPatterns = "/deleteBatch")
+@WebServlet(name = "archiveBatch", urlPatterns = "/archiveBatch")
 /**
  * A servlet to handle a delete request
  *
  * @author lbusch
  */
-public class DeleteBatch extends HttpServlet {
+public class ArchiveBatch extends HttpServlet {
     // just a logger, nothing to see here...
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -41,16 +41,18 @@ public class DeleteBatch extends HttpServlet {
 
         GenericDao<Batch> batchGenericDao = DaoFactory.createDao( Batch.class );
         Batch batchToDelete = batchGenericDao.getById(Integer.valueOf(request.getParameter("id")));
-        logger.info("Deleting batch " + batchToDelete.getId());
+        logger.info("Archiving batch #" + batchToDelete.getId());
         batchGenericDao.delete(batchToDelete);
 
-        request.setAttribute("deletedBatch", true);
-        request.setAttribute("deletedBatchId", batchToDelete.getId());
-        request.setAttribute("deletedBatchName", batchToDelete.getTitle());
+        request.setAttribute("archivedBatch", true);
+        request.setAttribute("archivedBatchId", batchToDelete.getId());
+        request.setAttribute("archivedBatchName", batchToDelete.getTitle());
 
         // send them off to the new batch page
         RequestDispatcher dispatcher = request.getRequestDispatcher("getAllBatchesForUser");
         dispatcher.include(request, response);
+
     }
 
 }
+

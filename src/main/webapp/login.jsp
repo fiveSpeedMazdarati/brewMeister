@@ -8,21 +8,24 @@
 </head>
 <body>
 <div class="container">
+  <h2 class="text-center"><img class="responsive-image" src="beerGlasses.png"></h2>
     <div class="row">
-        <div class="col-md-6 col-centered">
-        <form action="j_security_check" method="POST">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default center-block">
+          <form id="login-form" action="j_security_check" method="POST">
             <div class="form-group">
-              <label for="j_username">Username:</label>
-              <input type="text" name="j_username" id="j_username">
+                <label for="j_username">Username:</label>
+                <input class="form-control" type="text" name="j_username" id="j_username">
             </div>
             <div class="form-group">
-              <label for="j_password">Password:</label>
-              <input type="password" name="j_password" id="j_password">
+                <label for="j_password">Password:</label>
+                <input class="form-control" type="password" name="j_password" id="j_password">
             </div>
-            <input class="btn btn-submit" type="submit" value="Log In">
+            <input class="btn btn-submit center-block" type="submit" value="Log In">
         </form>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
 </body>
 </html>

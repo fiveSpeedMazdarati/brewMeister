@@ -11,8 +11,9 @@
 <body>
 <div class="container">
     <%@include file="topnav.jsp"%>
-        <div class="row ">
+        <div class="row">
             <form>
+                <fieldset>
                 <div class="col-xs-12 col-md-6">
                   <input class="form-control" type="hidden" value="${batch.id}" name="id">
                   <div class="form-group">
@@ -21,16 +22,16 @@
                   </div>
                   <div class="form-group">
                     <label for="initial-specific-gravity">Initial Specific Gravity</label>
-                    <input class="form-control" type="text" id="initial-specific-gravity" value="${batch.initialSpecificGravity}" name="title"><br />
+                    <input class="form-control" type="text" id="initial-specific-gravity" value="${batch.initialSpecificGravity}" name="initial-specific-gravity"><br />
                   </div>
                   <div class="form-group">
                     <label for="final-specific-gravity">Final Specific Gravity</label>
-                    <input class="form-control" type="text" id="final-specific-gravity" value="${batch.finalSpecificGravity}" name="title"><br />
+                    <input class="form-control" type="text" id="final-specific-gravity" value="${batch.finalSpecificGravity}" name="final-specific-gravity"><br />
                   </div>
                   <div class="form-group">
                     <label for="abv">ABV</label>
                     <div class="input-group">
-                      <input class="form-control" type="text" class="form-control" id="abv" aria-label="Percent alcohol by volume" value="${batch.ABV}">
+                      <input class="form-control" type="text" class="form-control" id="abv" aria-label="Percent alcohol by volume" value="${batch.ABV}" disabled>
                       <span class="input-group-addon">%</span>
                     </div>
                   </div>
@@ -57,9 +58,10 @@
                         <input class="form-control" type="date" id="expiration-date" value="${batch.expirationDate}" name="expiration-date"><br />
                     </div>
                 </div>
+                </fieldset>
                 <div class="row">
-                <!-- submit button in its own row so it's always at the bottom left (I think) -->
-                <input class="form-control" type="submit" formaction="updateBatch" formmethod="POST" value="Save Changes">
+                    <!-- submit button in its own row so it's always at the bottom left (I think) -->
+                    <input class="form-control" type="submit" formaction="updateBatch" formmethod="POST" value="Save Changes">
                 </div>
             </form>
         </div> <!-- end row -->
