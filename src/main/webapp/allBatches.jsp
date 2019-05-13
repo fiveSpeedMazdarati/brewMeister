@@ -9,6 +9,11 @@
 <body>
     <div class="container">
         <%@include file="topnav.jsp"%>
+        <!-- display the following alert banner if a batch has been deleted -->
+        <c:if test="${batchDeleted==true}">
+            <div class="alert alert-success alert-dismissable fade in" role="alert">${deletedBatchName} (Batch #${deletedBatchId}) updated successfully.
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
+        </c:if>
 
         <!-- display the following alert banner if a batch has been updated -->
         <c:if test="${batchUpdated==true}">

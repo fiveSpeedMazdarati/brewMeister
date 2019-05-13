@@ -44,7 +44,7 @@ public class DeleteBatch extends HttpServlet {
         logger.info("Deleting batch " + batchToDelete.getId());
         batchGenericDao.delete(batchToDelete);
 
-        request.setAttribute("deletedBatch", true);
+        request.setAttribute("batchDeleted", true);
         request.setAttribute("deletedBatchId", batchToDelete.getId());
         request.setAttribute("deletedBatchName", batchToDelete.getTitle());
 
