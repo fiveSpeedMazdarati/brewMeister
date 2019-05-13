@@ -11,6 +11,9 @@
   <h2 class="text-center"><img class="responsive-image" src="beerGlasses.png"></h2>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <c:if test="${successfulSignUp==true}">
+            <div class="alert alert-success">Thanks for signing up! Let's get started!</div>
+        </c:if>
         <div class="panel panel-default center-block">
           <form id="login-form" action="j_security_check" method="POST">
             <div class="form-group">

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(name = "GetAllBatchesForUser"
                 , urlPatterns = "/getAllBatchesForUser")
@@ -30,16 +31,27 @@ public class GetAllBatchesForUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
+        String loggedInUser;
 
-        String loggedInUser = req.getRemoteUser();
+        // if the remote user is null, then the user came directly here from the signup page
+        // if the user contains a value, then
+        if (req.getRemoteUser() != null) {
+            loggedInUser = req.getRemoteUser();
+
+        } else {
+            loggedInUser = (String) session.getAttribute("loggedInUserName");
+        }
+
         logger.info("Username " +loggedInUser + " successfully authenticated.");
 
-        //TODO: refactor to getIdFromUserName()
+        // get the user object based on username
         List<User> users = userDao.findByPropertyEqual("userName", loggedInUser);
+        // there should only ever be one user with a given username
         User user = users.get(0);
         int userId = user.getId();
 
-        //TODO: refactor to getBatchesByUserId()
+        // note to self: I could possibly get the batches associated with this user
+        //   now that I have a user object
         List<Batch> batches = batchDao.findByPropertyEqual("id", userId);
         logger.info("Getting all batches from the db for user #" + userId);
         logger.debug(batches);

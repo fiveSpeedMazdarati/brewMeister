@@ -3,7 +3,6 @@ package com.lukebusch.controller;
 import com.lukebusch.entity.Role;
 import com.lukebusch.entity.User;
 import com.lukebusch.persistence.GenericDao;
-import com.lukebusch.persistence.SessionFactoryProvider;
 import com.lukebusch.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -64,11 +62,14 @@ public class CreateNewUser extends HttpServlet {
 
             request.setAttribute("newUserId", newUserId);
             request.setAttribute("username", newUser.getUserName());
-            session.setAttribute("loggedInUser", newUser.getUserName());
+            session.setAttribute("loggedInUserName", newUser.getUserName());
             session.setAttribute("loggedInUserId", newUserId);
+            request.setAttribute("successfulSignUp", true);
 
             // forward them on to the all batches screen (which should be empty at this point)
-            routeUserToPage("getAllBatchesForUser", request, response);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/showIndex");
+            dispatcher.include(request, response);
+
 
         } else {
             // one of the username or email was in use, so go back to the sign up page and show an error
@@ -76,7 +77,8 @@ public class CreateNewUser extends HttpServlet {
             request.setAttribute("usernameInUseError", true);
 
             // send them off to the signup page again
-            routeUserToPage("/signUp.jsp", request, response);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/showCreateNewUser");
+            dispatcher.include(request, response);
         }
 
     }
@@ -112,7 +114,6 @@ public class CreateNewUser extends HttpServlet {
      * sends the user to the proper page after signup success or failure
      */
     private void routeUserToPage(String url, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.include(request, response);
+
     }
 }
