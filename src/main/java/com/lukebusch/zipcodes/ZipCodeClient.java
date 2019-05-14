@@ -39,7 +39,7 @@ public class ZipCodeClient {
     }
 
     /**
-     * Gets a response from www.zipcodeapi.com/api based on the provided zip code
+     * Gets a JSON response from www.zipcodeapi.com/api based on the provided zip code
      *
      * @param zipCode the zip code
      * @return info for zip
