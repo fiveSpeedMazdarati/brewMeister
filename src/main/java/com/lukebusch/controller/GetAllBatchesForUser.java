@@ -67,9 +67,12 @@ public class GetAllBatchesForUser extends HttpServlet {
         req.setAttribute("batches", user.getBatches());
 
         // pass along the info from the update batch servlet (will be empty if the program did not come here from the UpdateBatch servlet)
+
+
         req.setAttribute("batchUpdated", req.getAttribute("batchUpdated"));
         req.setAttribute("updatedBatchTitle", req.getAttribute("updatedBatchTitle"));
         req.setAttribute("UpdatedBatchId", req.getAttribute("updatedBatchId"));
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allBatches.jsp");
         dispatcher.include(req, resp);
